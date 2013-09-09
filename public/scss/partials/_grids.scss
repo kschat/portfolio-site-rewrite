@@ -1,0 +1,54 @@
+/* _grids.scss */
+
+.content {
+	background-color: whitesmoke;
+
+	@include clear-fix;
+
+	& > .container,
+	& > .container-fluid {
+		padding-top: 37px;
+	}
+
+	&:after {
+		height: 0;
+	}
+}
+
+.container {
+	@include center;
+	width: $containerWidth;
+	min-height: 30px;
+	height: 100%;
+
+	@include clear-fix;
+}
+
+.container-fluid {
+	@include center;
+	width: 100%;
+	min-height: 30px;
+
+	@include clear-fix;
+}
+
+.row,
+.row-fluid {
+	overflow: hidden;
+	float: left;
+	width: 100%;
+	height: 100%;
+	margin-bottom: 10px;
+
+	@include clear-fix;
+}
+
+@for $i from 1 through 12 {
+	.span#{$i} {
+		@include span-grid($i);
+	}
+
+	.offset#{$i} {
+		@include offset-grid($i);
+	}
+}

@@ -1,0 +1,23 @@
+/* _form.scss */
+
+input[type="text"],
+input[type="password"] {
+	width: 225px;
+	line-height: 15px;
+	font-size: 13px;
+	padding: 4px 8px;
+	border: 1px solid $grayDarker;
+	@include border-radius(4px);
+	@include transition(border-color .6s ease, box-shadow .6s ease);
+	
+	&.input-large {
+		width: 250px;
+	}
+
+	&:active,
+	&:focus {
+		border: 1px solid $cyan;
+		@include box-shadow(0, 0, 8px, 1px, lighten($cyan, 10%));
+		@include transition(border-color .6s ease, box-shadow .6s ease);
+	}
+}

@@ -1,0 +1,82 @@
+/* _base.scss */
+
+@import "modules/all";
+
+a {
+	color: $cyan;
+	text-decoration: none;
+}
+
+.pull-right {
+	@include pull-right;
+}
+
+.pull-left {
+	@include pull-left;
+}
+
+.panel {
+	background-color: $white;
+	border: 1px solid $grayLight;
+	@include border-radius(4px);
+	@include box-shadow(0, 2px, 9px, 2px, $grayLighter);
+	padding: 10px 0;
+}
+
+.slogan {
+	padding-top: 120px;
+	padding-bottom: 90px;
+	color: $white;
+	background-color: $cyan;
+	line-height: 30px;
+	text-align: center;
+	font-size: 25px;
+
+	& h1 {
+		font-size: 60px;
+	}
+
+	& h1,
+	& p {
+		position: relative;
+		
+		@include animation(fadein-left 2s);
+	}
+}
+
+.footer {
+	height: $footerHeight;
+	background-color: $blackLighter;
+}
+
+.wrapper {
+	min-height: 100%;
+	margin-bottom: -$footerHeight;
+
+	@include clear-fix;
+
+	&:after {
+		height: $footerHeight;
+	}
+}
+
+.large-icon {
+	background-color: $cyan;
+	text-align: center;
+	overflow: hidden;
+	height: 200px;
+	width: 200px;
+
+	border-radius: 50%;
+	margin: 5px;
+	margin-top: 40px;
+	padding-top: 45px;
+
+	display: inline-block;
+	font-size: 180px;
+	line-height: 140px;
+}
+
+.noscroll {
+	overflow: hidden;
+}

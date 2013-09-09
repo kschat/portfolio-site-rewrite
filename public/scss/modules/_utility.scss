@@ -1,0 +1,128 @@
+/* _utility.scss */
+
+@mixin center {
+	margin: 0 auto;
+}
+
+@mixin clear-fix {
+	display: block;
+	
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+@mixin pull-right {
+	float: right;
+	@include clear-fix;
+}
+
+@mixin pull-left {
+	float: left;
+	@include clear-fix;
+}
+
+@mixin span-grid($size) {
+	width: ($size/12)*100%;
+	height: 100%;
+	float: left;
+	padding-right: 20px;
+	@include clear-fix;
+
+	&:last-of-type {
+		padding-right: 0;
+	}
+}
+
+@mixin offset-grid($size) {
+	margin-left: ($size/12)*100%;
+}
+
+@mixin border-radius($topLeft, $topRight:$topLeft, $bottomRight:$topLeft, $bottomLeft:$topLeft) {
+  -webkit-border-radius: $topLeft $topRight $bottomRight $bottomLeft; /* Safari 3-4, iOS 1-3.2, Android 1.6- */
+  -moz-border-radius:    $topLeft $topRight $bottomRight $bottomLeft;   /* Firefox 1-3.6 */
+  border-radius: 		 $topLeft $topRight $bottomRight $bottomLeft;   /* Opera 10.5, IE 9, Safari 5, Chrome, Firefox 4, iOS 4, Android 2.1+ */
+}
+
+@mixin box-shadow($horOffset:0, $vertOffset:0, $blur:0, $spread:0, $color:#fff) {
+	-moz-box-shadow:  $horOffset $vertOffset $blur $spread $color;
+  -webkit-box-shadow: $horOffset $vertOffset $blur $spread $color;
+  box-shadow:         $horOffset $vertOffset $blur $spread $color;
+}
+
+@mixin transition($var...) {
+	-webkit-transition: $var;
+	-moz-transition: $var;
+	-ms-transition: $var;
+	-o-transition: $var;
+	transition: $var;
+}
+
+@mixin transparency($val) {
+	zoom: 1;
+	filter: alpha(opacity=$val*100);
+	opacity: $val;
+}
+
+@mixin placeholder-color($color) {
+	&::-webkit-input-placeholder {
+	   color: $color;
+	}
+
+	&:-moz-placeholder { /* Firefox 18- */
+	   color: $color;  
+	}
+
+	&::-moz-placeholder {  /* Firefox 19+ */
+	   color: $color;  
+	}
+
+	&:-ms-input-placeholder {  
+	   color: $color;  
+	}
+}
+
+@mixin rotate-text($deg) {
+	-webkit-transform: rotate($deg); /* Safari */
+	-moz-transform: rotate($deg); /* Firefox */
+	-ms-transform: rotate($deg); /* IE */
+	-o-transform: rotate($deg); /* Opera */
+	//filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3); /* Internet Explorer */
+	transform: rotate($deg);
+}
+
+@mixin sticky-header($top) {
+	position: -webkit-sticky;
+	position: -moz-sticky;
+	position: -ms-sticky;
+	position: -o-sticky;
+	position: sticky;
+	top: $top;
+}
+
+@mixin keyframes($name) {
+	@-webkit-keyframes #{$name} {
+		@content;
+	}
+
+	@-moz-keyframes #{$name} {
+		@content;
+	}
+
+	@-ms-keyframes #{$name} {
+		@content;
+	}
+
+	@keyframes #{$name} {
+		@content;
+	}
+}
+
+@mixin animation($var...) {
+	-webkit-animation: $var;
+	-moz-animation: $var;
+	-o-animation: $var;
+	animation: $var;
+}

@@ -1,0 +1,31 @@
+.black-box {
+	@include box($black)
+}
+
+.black-light-box {
+	@include box($blackLight)
+}
+
+.black-lighter-box {
+	@include box($blackLighter)
+}
+
+.gray-darker-box {
+	@include box($grayDarker)
+}
+
+.gray-dark-box {
+	@include box($grayDark)
+}
+
+.gray-box {
+	@include box($gray)
+}
+
+.gray-light-box {
+	@include box($grayLight)
+}
+
+.gray-lighter-box {
+	@include box($grayLighter)
+}
