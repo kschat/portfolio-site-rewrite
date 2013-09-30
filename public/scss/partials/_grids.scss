@@ -7,7 +7,7 @@
 
 	& > .container,
 	& > .container-fluid {
-		padding-top: 37px;
+		padding-top: $mobileHeaderLineHeight;
 	}
 
 	&:after {
@@ -17,8 +17,8 @@
 
 .container {
 	@include center;
-	width: $containerWidth;
-	min-height: 30px;
+	width: $mobileContainerWidth;
+	min-height: $mobileHeaderLineHeight;
 	height: 100%;
 
 	@include clear-fix;

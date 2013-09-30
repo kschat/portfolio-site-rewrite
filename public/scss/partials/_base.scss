@@ -7,74 +7,101 @@ a {
 	text-decoration: none;
 }
 
+section[role='main'] {
+	padding-top: $mobileHeaderHeight;
+	height: 100%;
+	background-color: $white;
+}
+
+.nav-drawer {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 30px;
+	font-size: 24px;
+	line-height: 28px;
+	border-top: 1px solid $grayLight;
+
+	& li {
+		list-style: none;
+		display: inline-block;
+	
+		& a,
+		& a:link {
+			height: 100%;
+			color: $blackLighter;
+			background-color: $grayLighter;
+			display: block;
+			margin: 0 auto;
+			text-align: center;
+			padding: 8px 0;
+		}
+
+		& a:hover,
+		& a:active {
+			color: $white;
+			background-color: $blackLighter;
+		}
+	}
+}
+
+.drawer-button,
+.drawer-button:link {
+	height: 100%;
+	color: $blackLighter;
+	background-color: $grayLighter;
+	display: block;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.drawer-button:hover,
+.drawer-button:active {
+	color: $white;
+	background-color: $blackLighter;
+}
+
+.drawer {
+	display: none;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+
+	background-color: $grayLighter;
+	
+	& li {
+		display: block;
+	}
+}
+
+#navigation:target {
+	top: $mobileHeaderHeight;
+	width: 100%;
+	height: 100%;
+}
+
+#navigation:target > .drawer-button {
+	background-color: $blackLighter;
+	color: $cyan;
+	border-bottom: 1px solid $grayLighter;
+}
+
+#navigation:target > .drawer {
+	display: block;
+	height: 100%;
+	top: 30px;
+}
+
 .pull-right {
 	@include pull-right;
 }
 
 .pull-left {
 	@include pull-left;
-}
-
-.panel {
-	background-color: $white;
-	border: 1px solid $grayLight;
-	@include border-radius(4px);
-	@include box-shadow(0, 2px, 9px, 2px, $grayLighter);
-	padding: 10px 0;
-}
-
-.slogan {
-	padding-top: 120px;
-	padding-bottom: 90px;
-	color: $white;
-	background-color: $cyan;
-	line-height: 30px;
-	text-align: center;
-	font-size: 25px;
-
-	& h1 {
-		font-size: 60px;
-	}
-
-	& h1,
-	& p {
-		position: relative;
-		
-		@include animation(fadein-left 2s);
-	}
-}
-
-.footer {
-	height: $footerHeight;
-	background-color: $blackLighter;
-}
-
-.wrapper {
-	min-height: 100%;
-	margin-bottom: -$footerHeight;
-
-	@include clear-fix;
-
-	&:after {
-		height: $footerHeight;
-	}
-}
-
-.large-icon {
-	background-color: $cyan;
-	text-align: center;
-	overflow: hidden;
-	height: 200px;
-	width: 200px;
-
-	border-radius: 50%;
-	margin: 5px;
-	margin-top: 40px;
-	padding-top: 45px;
-
-	display: inline-block;
-	font-size: 180px;
-	line-height: 140px;
 }
 
 .noscroll {

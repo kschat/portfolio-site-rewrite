@@ -13,117 +13,65 @@
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <link rel="stylesheet" href="css/main.css">
     </head>
-    <body >
+    <body>
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
-        <div class="wrapper">
-            <header class="navbar">
-                <div class="navbar-content">
-                    <form class="search">
-                        <span class="search-overlay">
-                            <a href="#">
-                                <i class="icon-search"></i>
-                            </a>
-                            <input type="text" placeholder="Search" />
-                        </span>
-                    </form>
+        <header class="navbar">
+            <div class="navbar-content">
+                <form class="search">
+                    <span class="search-overlay">
+                        <a href="#">
+                            <i class="icon-search"></i>
+                        </a>
+                        <input type="text" placeholder="Search" />
+                    </span>
+                </form>
 
-                    <div class="brand">
-                        <a href="#">Kyle Schattler</a>
-                    </div>
-
-                    <ul class="nav pull-right">
-                        <li>
-                            <a href="https://github.com/kschat" target="_blank">
-                                <i class="icon-github"></i>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="https://plus.google.com/114515999955184160519/posts" target="_blank">
-                                <i class="icon-google-plus"></i>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="https://www.facebook.com/kyle.schattler" target="_blank">
-                                <i class="icon-linkedin"></i>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#">
-                                <i class="icon-envelope"></i>
-                            </a>
-                        </li>
-                    </ul>
+                <div class="brand">
+                    <a href="#">Kyle Schattler</a>
                 </div>
-            </header>
 
-            <section class="slogan">
-                <div class="container">
-                    <div class="row">
-                        <div>
-                            <div class="span12">
-                                <h1>Software Engineer</h1>
-                                <p>JavaScript evangelist.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+                <ul class="nav pull-right">
+                    <li>
+                        <a href="https://github.com/kschat" target="_blank">
+                            <i class="icon-github"></i>
+                        </a>
+                    </li>
 
-            <header class="navbar navbar-secondary">
-                <div class="navbar-content">
-                    <div class="container">
-                        <div class="row">
-                            <div class="span12">
-                                <ul class="nav">
-                                    <li><a href="#">About</a></li>
-                                    <li><a href="#">Projects</a></li>
-                                    <li><a href="#">Resume</a></li>
-                                    <li><a href="#">Contact</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </header>
+                    <li>
+                        <a href="https://plus.google.com/114515999955184160519/posts" target="_blank">
+                            <i class="icon-google-plus"></i>
+                        </a>
+                    </li>
 
-            <section class="content">
-                <div class="container-fluid">
-                    <div class="row-fluid">
-                        <div class="span2 offset4">
-                            <div class="large-icon">
-                                <i class="icon-male"></i>
-                            </div>
-                        </div>
-                        <div class="span5">
-                            <h2>More about me...</h2>
-                            <p>
-                                I live in Pittsburgh, Pennsylvania and work as a Software Engineer at UPMC. Although my preferred
-                                platform is Linux, I'm currently in a .NET enviroment at work. In my free time I like to work on
-                                side projects - my latest project being a class scheduler in Node.js - to help sharpen my skills 
-                                as a programmer.
-                                <br /><br />
-                                I started off as a "Java developer" making small applications in school. I quickly shifted 
-                                my passion towards web development, however, after realizing the power of JavaScript and the
-                                HTML 5 APIs. Since then I worked on various projects in a wide range of platforms and technologies.
+                    <li>
+                        <a href="https://www.facebook.com/kyle.schattler" target="_blank">
+                            <i class="icon-linkedin"></i>
+                        </a>
+                    </li>
 
-                                <br /><br />
-                                When I'm not programming (which isn't often) I like to spend my time playing disc golf, watch depressing 
-                                movies, and snowboard in the winter. I'm also an aspiring "competitive" Team Fortress 2 player, although
-                                that's all but hit a wall in terms of progress.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-
-        <footer class="footer">
-            footer
+                    <li>
+                        <a href="#">
+                            <i class="icon-envelope"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        
+        <section role="main">
+            
+        </section>
+        
+        <footer id="navigation" class="nav-drawer">
+            <a class="drawer-button" href="#navigation"><i class="icon-chevron-up"></i></a>
+            <ul class="drawer">
+                <li><a href="#">About</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">Resume</a></li>
+                <li><a href="#">Blog</a></li>
+            </ul>
         </footer>
 
         <div class="search-results-overlay" style="display: none;">
@@ -191,7 +139,7 @@
         </div>
 
         <script>
-            var _gaq = _gaq || [];
+            /*var _gaq = _gaq || [];
 		  _gaq.push(['_setAccount', 'UA-34754817-1']);
 		  _gaq.push(['_setDomainName', 'kyleschattler.com']);
 		  _gaq.push(['_trackPageview']);
@@ -200,7 +148,7 @@
 		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
 		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
 		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-		  })();
+		  })();*/
         </script>
     </body>
 </html>
