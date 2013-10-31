@@ -73,7 +73,7 @@ ul.nav {
 		& a:link,
 		& a:visited {
 			line-height: $mobileHeaderLineHeight;
-			padding: 0 12px;
+			padding: $mobileSocialLinkPadding;
 			height: 100%;
 			width: 100%;
 		}

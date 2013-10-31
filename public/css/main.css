@@ -10,7 +10,7 @@ a {
 
 section[role='main'] {
   padding-top: 48px;
-  padding-left: 70px;
+  padding-left: 60px;
   height: 100%;
   background-color: white; }
 
@@ -417,7 +417,7 @@ ul.nav {
     height: 100%; }
     ul.nav li a, ul.nav li a:link, ul.nav li a:visited {
       line-height: 48px;
-      padding: 0 12px;
+      padding: 0 8px;
       height: 100%;
       width: 100%; }
 
@@ -439,15 +439,15 @@ ul.nav.vertical {
   -moz-box-shadow: 1px 10px 14px 4px #cccccc;
   -webkit-box-shadow: 1px 10px 14px 4px #cccccc;
   box-shadow: 1px 10px 14px 4px #cccccc;
-  width: 70px;
+  width: 60px;
   height: 100%; }
   .side-nav .nav li {
     position: relative; }
   .side-nav .nav i {
     display: block;
-    font-size: 34px; }
+    font-size: 30px; }
   .side-nav .nav a, .side-nav .nav a:link, .side-nav .nav a:visited {
-    font-size: 14px;
+    font-size: 13px;
     color: white;
     outline: none;
     -webkit-transition: color 0.8s ease;
