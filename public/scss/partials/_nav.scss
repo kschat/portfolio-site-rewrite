@@ -120,8 +120,6 @@ ul.nav.vertical {
 	& .nav i {
 		display: block;
 		font-size: $mobileLeftNavIconSize;
-
-		-webkit-backface-visibility: hidden;
 	}
 
 	& .nav a,
@@ -131,8 +129,6 @@ ul.nav.vertical {
 		color: $white;
 		outline: none;
 		@include transition(color 0.8s ease);
-
-		-webkit-backface-visibility: hidden;
 	}
 
 	& .nav a:hover::before {

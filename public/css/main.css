@@ -439,8 +439,7 @@ ul.nav.vertical {
     position: relative; }
   .side-nav .nav i {
     display: block;
-    font-size: 30px;
-    -webkit-backface-visibility: hidden; }
+    font-size: 30px; }
   .side-nav .nav a, .side-nav .nav a:link, .side-nav .nav a:visited {
     font-size: 13px;
     color: white;
@@ -449,8 +448,7 @@ ul.nav.vertical {
     -moz-transition: color 0.8s ease;
     -ms-transition: color 0.8s ease;
     -o-transition: color 0.8s ease;
-    transition: color 0.8s ease;
-    -webkit-backface-visibility: hidden; }
+    transition: color 0.8s ease; }
   .side-nav .nav a:hover::before {
     color: white; }
   .side-nav .nav a:hover::before {
