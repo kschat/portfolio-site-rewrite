@@ -38,11 +38,11 @@ section[role='main'] {
 	height: 100%;
 	float: right;
 
-	background-color: $backgroundColor;
-	background-size: 15px 15px;
-	@include linear-gradient(-45deg, 
-		rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, 
-		rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+	background-color: $white;
+	// background-size: 15px 15px;
+	// @include linear-gradient(-45deg, 
+	// 	rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, 
+	// 	rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
 
 	& .panel-header {
 		width: 100%;
@@ -58,10 +58,12 @@ section[role='main'] {
 		width: 100%;
 		padding: 8px 24px;
 		border-top: 1px solid $gray;
+		background-color: $white;
 	}
 }
 
 .panel-overlay {
+	display: none;
 	position: absolute;
 	top: 0;
 	left: 0;
