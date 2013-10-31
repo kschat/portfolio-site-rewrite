@@ -475,19 +475,23 @@ ul.nav.vertical {
 
 #about:target::before {
   display: block;
-  border-right: 10px solid white; }
+  border-right: 10px solid white;
+  -webkit-backface-visibility: hidden; }
 
 #projects:target::before {
   display: block;
-  border-right: 10px solid white; }
+  border-right: 10px solid white;
+  -webkit-backface-visibility: hidden; }
 
 #resume:target::before {
   display: block;
-  border-right: 10px solid white; }
+  border-right: 10px solid white;
+  -webkit-backface-visibility: hidden; }
 
 #blog:target::before {
   display: block;
-  border-right: 10px solid white; }
+  border-right: 10px solid white;
+  -webkit-backface-visibility: hidden; }
 
 .side-nav-content {
   text-align: center; }
