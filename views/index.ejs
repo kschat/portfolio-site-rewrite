@@ -12,6 +12,7 @@
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <link rel="stylesheet" href="css/main.css">
+        <!--<script src="js/app.js"></script>-->
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -22,57 +23,92 @@
                 <form class="search">
                     <span class="search-overlay">
                         <a href="#">
-                            <i class="icon-search"></i>
+                            <i class="fa fa-search"></i>
                         </a>
                         <input type="text" placeholder="Search" />
                     </span>
                 </form>
 
-                <div class="brand">
-                    <a href="#">Kyle Schattler</a>
-                </div>
+                <!-- <div class="brand"> -->
+                    <a class="brand" href="#">Kyle Schattler</a>
+                <!-- </div> -->
 
                 <ul class="nav pull-right">
                     <li>
-                        <a href="https://github.com/kschat" target="_blank">
-                            <i class="icon-github"></i>
-                        </a>
+                        <a class="fa fa-github" href="#"></a>
                     </li>
 
                     <li>
-                        <a href="https://plus.google.com/114515999955184160519/posts" target="_blank">
-                            <i class="icon-google-plus"></i>
-                        </a>
+                        <a class="fa fa-google-plus" href="#"></a>
                     </li>
 
                     <li>
-                        <a href="https://www.facebook.com/kyle.schattler" target="_blank">
-                            <i class="icon-linkedin"></i>
-                        </a>
+                        <a class="fa fa-linkedin" href="#"></a>
                     </li>
 
                     <li>
-                        <a href="#">
-                            <i class="icon-envelope"></i>
-                        </a>
+                        <a class="fa fa-facebook" href="#"></a>
                     </li>
                 </ul>
             </div>
         </header>
         
-        <section role="main">
-            
+        <section class="side-nav">
+            <div class="side-nav-content">
+                <div>
+                    <img class="thumb" src="images/danandi.jpg">
+                </div>
+
+                <ul class="nav vertical">
+                    <li>
+                        <a id="about" href="#about">
+                            <i class="fa fa-info-circle"></i>
+                            <span>About</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a id="projects" href="#projects">
+                            <i class="fa fa-pencil"></i>
+                            <span>Projects</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a id="resume" href="#resume">
+                            <i class="fa fa-file-text-o"></i>
+                            <span>Resume</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a id="blog" href="#blog">
+                            <i class="fa fa-comments-o"></i>
+                            <span>Blog</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </section>
-        
-        <footer id="navigation" class="nav-drawer">
-            <a class="drawer-button" href="#navigation"><i class="icon-chevron-up"></i></a>
-            <ul class="drawer">
-                <li><a href="#">About</a></li>
-                <li><a href="#">Projects</a></li>
-                <li><a href="#">Resume</a></li>
-                <li><a href="#">Blog</a></li>
-            </ul>
-        </footer>
+
+        <section role="main">
+            <div class="background-panel">
+                <!-- <canvas id="background-canvas" height="200px" width="200px"></canvas> -->
+                <div class="panel">
+                    <h3 class="panel-header">About Me</h3>
+
+                    <div class="panel-body">
+                        <p>
+                            I live in Pttsburgh, Pennsylvania and work as a Software Engineer at UPMC. Although my preferred platform is
+                            Linux, I'm currently in a .NET environment at work. In my free time I like to work on side projects - my latest
+                            project being a class scheduler in Node.js - to help sharpen my skills as a programmer.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="panel-overlay"></div>
+            </div>
+        </section>
 
         <div class="search-results-overlay" style="display: none;">
             <div class="container-fluid search-results-container">

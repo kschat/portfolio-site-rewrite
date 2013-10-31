@@ -4,14 +4,16 @@
 
 //Mobile containers
 $mobileContainerWidth: 100%;
-$mobileHeaderHeight: 38px;
-
+$mobileHeaderHeight: 48px;
+$mobileLeftNavWidth: 70px;
 
 //Mobile fonts
-$mobileFontSize: 0.8em;
-$mobileLineHeight: 1.4em;
-$mobileHeaderFontSize: 16px;
-$mobileHeaderLineHeight: 38px;
+$mobileFontSize: 16px;
+$mobileLineHeight: 26px;
+$mobileHeaderFontSize: 18px;
+$mobileHeaderLineHeight: 48px;
+$mobileLeftNavFontSize: 14px;
+$mobileLeftNavIconSize: 34px;
 
 //Tablet sizes
 
@@ -20,3 +22,13 @@ $containerWidth: 1170px;
 
 $headerHeight: 40px;
 $footerHeight: 120px;
+$desktopLeftNavWidth: 170px;
+
+//Desktop fonts
+$desktopHeaderFontSize: 18px;
+
+//z-indexs
+$headerZIndex: 97;
+$leftNavZIndex: 98;
+$panelZIndex: 100;
+$panelOverlayZIndex: 99;

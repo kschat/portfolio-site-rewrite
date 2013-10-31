@@ -9,91 +9,68 @@ a {
 
 section[role='main'] {
 	padding-top: $mobileHeaderHeight;
+	padding-left: $mobileLeftNavWidth;
 	height: 100%;
 	background-color: $white;
 }
 
-.nav-drawer {
-	position: fixed;
-	bottom: 0;
+.background-panel {
+	position: relative;
+	top: 0;
 	left: 0;
 	width: 100%;
-	height: 30px;
-	font-size: 24px;
-	line-height: 28px;
-	border-top: 1px solid $grayLight;
+	height: 100%;
+	background-color: $backgroundColor;
+}
 
-	& li {
-		list-style: none;
-		display: inline-block;
-	
-		& a,
-		& a:link {
-			height: 100%;
-			color: $blackLighter;
-			background-color: $grayLighter;
-			display: block;
-			margin: 0 auto;
-			text-align: center;
-			padding: 8px 0;
-		}
+#background-canvas {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
 
-		& a:hover,
-		& a:active {
-			color: $white;
-			background-color: $blackLighter;
-		}
+.panel {
+	position: relative;
+	z-index: $panelZIndex;
+
+	//width: 80%; media query
+	//min-width: 610px; media query
+	height: 100%;
+	float: right;
+
+	background-color: $backgroundColor;
+	background-size: 15px 15px;
+	@include linear-gradient(-45deg, 
+		rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, 
+		rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+
+	& .panel-header {
+		width: 100%;
+		background-color: $white;
+
+		font-size: $mobileHeaderFontSize;
+
+		padding: 2px 24px;
+		//border-left: 4px solid $cyan; media query
+	}
+
+	& .panel-body {
+		width: 100%;
+		padding: 8px 24px;
+		border-top: 1px solid $gray;
 	}
 }
 
-.drawer-button,
-.drawer-button:link {
-	height: 100%;
-	color: $blackLighter;
-	background-color: $grayLighter;
-	display: block;
-	margin: 0 auto;
-	text-align: center;
-}
-
-.drawer-button:hover,
-.drawer-button:active {
-	color: $white;
-	background-color: $blackLighter;
-}
-
-.drawer {
-	display: none;
+.panel-overlay {
 	position: absolute;
-	bottom: 0;
+	top: 0;
 	left: 0;
-	width: 100%;
-	padding: 0;
-	margin: 0;
-
-	background-color: $grayLighter;
-	
-	& li {
-		display: block;
-	}
-}
-
-#navigation:target {
-	top: $mobileHeaderHeight;
-	width: 100%;
+	z-index: $panelOverlayZIndex;
 	height: 100%;
-}
+	width: 100%;
 
-#navigation:target > .drawer-button {
-	background-color: $blackLighter;
-	color: $cyan;
-	border-bottom: 1px solid $grayLighter;
-}
-
-#navigation:target > .drawer {
-	display: block;
-	height: 100%;
-	top: 30px;
+	background-color: #555;
+	@include transparency(.8);
 }
 
 .pull-right {

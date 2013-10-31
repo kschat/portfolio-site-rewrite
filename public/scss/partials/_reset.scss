@@ -19,6 +19,7 @@
 html,
 body {
     height: 100%;
+    overflow-x: hidden;
 }
 
 /**
@@ -113,9 +114,9 @@ textarea {
 
 body {
     font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-    font-size: 62.5%;
-    color: $blackLighter;
-    line-height: 1.4em;
+    font-size: $mobileFontSize;
+    color: $baseFontColor;
+    line-height: $mobileLineHeight;
     margin: 0;
 }
 
@@ -153,37 +154,31 @@ a:hover {
 h1 {
     font-size: 64px;
     line-height: 40px;
-    margin: 12px 0;
 }
 
 h2 {
     font-size: 48px;
     line-height: 42px;
-    margin: 10px 0;
 }
 
 h3 {
     font-size: 34px;
     line-height: 42px;
-    margin: 8px 0;
 }
 
 h4 {
     font-size: 24px;
     line-height: 24px;
-    margin: 6px 0;
 }
 
 h5 {
     font-size: 18px;
     line-height: 16px;
-    margin: 4px 0;
 }
 
 h6 {
     font-size: 14px;
     line-height: 4px;
-    margin: 2.33em 0;
 }
 
 /**
@@ -241,7 +236,7 @@ mark {
 
 p,
 pre {
-    margin: 1em 0;
+    margin: 4px 0;
 }
 
 /**

@@ -126,3 +126,28 @@
 	-o-animation: $var;
 	animation: $var;
 }
+
+@mixin selectedLink($id) {
+	// ##{$id}:target {
+	// 	color: $white;
+	// } media query
+
+	##{$id}:target::before {
+		display: block;
+		border-right: 10px solid $white;
+		//width: 100%; media query
+	}
+}
+
+@mixin triangle($size, $color) {
+	border-right: $size solid $color;
+	border-bottom: $size solid transparent;
+	border-top: $size solid transparent;
+}
+
+@mixin linear-gradient($var...) {
+	background-image: -webkit-linear-gradient($var); 
+	background-image:    -moz-linear-gradient($var);
+	background-image:     -ms-linear-gradient($var);
+	background-image:      -o-linear-gradient($var);
+}
