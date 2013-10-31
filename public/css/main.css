@@ -471,27 +471,23 @@ ul.nav.vertical {
     -ms-transition: width 0.8s ease, border-right 0.8s ease;
     -o-transition: width 0.8s ease, border-right 0.8s ease;
     transition: width 0.8s ease, border-right 0.8s ease;
-    -webkit-backface-visibility: hidden; }
+    -webkit-transform-style: preserve-3d; }
 
 #about:target::before {
   display: block;
-  border-right: 10px solid white;
-  -webkit-backface-visibility: hidden; }
+  border-right: 10px solid white; }
 
 #projects:target::before {
   display: block;
-  border-right: 10px solid white;
-  -webkit-backface-visibility: hidden; }
+  border-right: 10px solid white; }
 
 #resume:target::before {
   display: block;
-  border-right: 10px solid white;
-  -webkit-backface-visibility: hidden; }
+  border-right: 10px solid white; }
 
 #blog:target::before {
   display: block;
-  border-right: 10px solid white;
-  -webkit-backface-visibility: hidden; }
+  border-right: 10px solid white; }
 
 .side-nav-content {
   text-align: center; }

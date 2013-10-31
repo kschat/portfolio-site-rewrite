@@ -135,8 +135,7 @@
 	##{$id}:target::before {
 		display: block;
 		border-right: 10px solid $white;
-		-webkit-backface-visibility: hidden;
-		
+
 		//width: 100%; media query
 	}
 }
