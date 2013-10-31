@@ -472,31 +472,23 @@ ul.nav.vertical {
     -o-transition: width 0.8s ease, border-right 0.8s ease;
     transition: width 0.8s ease, border-right 0.8s ease;
     -webkit-perspective: 1000;
-    -webkit-transform: translate3d(0, 0, 0); }
+    -webkit-backface-visibility: hidden; }
 
 #about:target::before {
   display: block;
-  border-right: 10px solid white;
-  -webkit-perspective: 1000;
-  -webkit-transform: translate3d(0, 0, 0); }
+  border-right: 10px solid white; }
 
 #projects:target::before {
   display: block;
-  border-right: 10px solid white;
-  -webkit-perspective: 1000;
-  -webkit-transform: translate3d(0, 0, 0); }
+  border-right: 10px solid white; }
 
 #resume:target::before {
   display: block;
-  border-right: 10px solid white;
-  -webkit-perspective: 1000;
-  -webkit-transform: translate3d(0, 0, 0); }
+  border-right: 10px solid white; }
 
 #blog:target::before {
   display: block;
-  border-right: 10px solid white;
-  -webkit-perspective: 1000;
-  -webkit-transform: translate3d(0, 0, 0); }
+  border-right: 10px solid white; }
 
 .side-nav-content {
   text-align: center; }
