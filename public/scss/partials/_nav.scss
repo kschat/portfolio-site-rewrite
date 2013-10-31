@@ -110,8 +110,6 @@ ul.nav.vertical {
 
 	& .nav li {
 		position: relative;
-
-		-webkit-transform:translate3d(0,0,0);
 		//border-top: 1px solid $grayLight; media query
 	}
 
@@ -160,6 +158,9 @@ ul.nav.vertical {
 		//background-color: $cyan; media query
 		content: "";
 		@include transition(width 0.8s ease, border-right 0.8s ease);
+
+		-webkit-perspective: 1000;
+		-webkit-transform:translate3d(0,0,0);
 	}
 }
 
