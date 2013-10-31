@@ -38,17 +38,6 @@ routeFiles.forEach(function(file) {
 	route.init(app);
 });
 
-/*
-* If no other routes match load a page not found
-* error page
-*/
-/*app.use(function(req, res) {
-	res.render('error', {
-		title: 'Scheduler',
-		error: 'Page not found'
-	});
- });*/
-
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
