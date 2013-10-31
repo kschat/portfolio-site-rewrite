@@ -159,7 +159,7 @@ ul.nav.vertical {
 		content: "";
 		@include transition(width 0.8s ease, border-right 0.8s ease);
 
-		-webkit-transform-style: preserve-3d;
+		-webkit-transform:translate3d(0,0,0);
 	}
 }
 

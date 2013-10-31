@@ -471,7 +471,7 @@ ul.nav.vertical {
     -ms-transition: width 0.8s ease, border-right 0.8s ease;
     -o-transition: width 0.8s ease, border-right 0.8s ease;
     transition: width 0.8s ease, border-right 0.8s ease;
-    -webkit-transform-style: preserve-3d; }
+    -webkit-transform: translate3d(0, 0, 0); }
 
 #about:target::before {
   display: block;
