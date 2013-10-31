@@ -436,7 +436,8 @@ ul.nav.vertical {
   width: 60px;
   height: 100%; }
   .side-nav .nav li {
-    position: relative; }
+    position: relative;
+    -webkit-transform: translate3d(0, 0, 0); }
   .side-nav .nav i {
     display: block;
     font-size: 30px; }
@@ -470,8 +471,7 @@ ul.nav.vertical {
     -moz-transition: width 0.8s ease, border-right 0.8s ease;
     -ms-transition: width 0.8s ease, border-right 0.8s ease;
     -o-transition: width 0.8s ease, border-right 0.8s ease;
-    transition: width 0.8s ease, border-right 0.8s ease;
-    -webkit-transform: translate3d(0, 0, 0); }
+    transition: width 0.8s ease, border-right 0.8s ease; }
 
 #about:target::before {
   display: block;
