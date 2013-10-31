@@ -46,6 +46,7 @@ section[role='main'] {
 
 	& .panel-header {
 		width: 100%;
+		color: $headerFontColor;
 		background-color: $white;
 
 		font-size: $mobileHeaderFontSize;

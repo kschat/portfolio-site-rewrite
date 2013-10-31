@@ -109,6 +109,7 @@ ul.nav.vertical {
 	height: 100%;
 
 	& .nav li {
+		text-shadow: 0 0 6px #444;
 		position: relative;
 		//border-top: 1px solid $grayLight; media query
 	}
@@ -158,9 +159,6 @@ ul.nav.vertical {
 		//background-color: $cyan; media query
 		content: "";
 		@include transition(width 0.8s ease, border-right 0.8s ease);
-
-		-webkit-perspective: 1000;
-		-webkit-backface-visibility: hidden;
 	}
 }
 

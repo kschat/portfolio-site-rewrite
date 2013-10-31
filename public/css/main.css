@@ -35,6 +35,7 @@ section[role='main'] {
   background-color: white; }
   .panel .panel-header {
     width: 100%;
+    color: #909090;
     background-color: white;
     font-size: 18px;
     padding: 2px 24px; }
@@ -436,6 +437,7 @@ ul.nav.vertical {
   width: 60px;
   height: 100%; }
   .side-nav .nav li {
+    text-shadow: 0 0 6px #444;
     position: relative; }
   .side-nav .nav i {
     display: block;
@@ -470,9 +472,7 @@ ul.nav.vertical {
     -moz-transition: width 0.8s ease, border-right 0.8s ease;
     -ms-transition: width 0.8s ease, border-right 0.8s ease;
     -o-transition: width 0.8s ease, border-right 0.8s ease;
-    transition: width 0.8s ease, border-right 0.8s ease;
-    -webkit-perspective: 1000;
-    -webkit-backface-visibility: hidden; }
+    transition: width 0.8s ease, border-right 0.8s ease; }
 
 #about:target::before {
   display: block;
@@ -779,7 +779,7 @@ textarea {
 body {
   font-family: 'Open Sans', Helvetica, Arial, sans-serif;
   font-size: 16px;
-  color: #444444;
+  color: #adadad;
   line-height: 26px;
   margin: 0; }
 
