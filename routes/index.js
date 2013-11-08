@@ -4,6 +4,6 @@
  */
 exports.init = function init(app) {
   app.get('/', function(req, res) {
-  	res.render('index', { title: 'express' });
+  	res.render('index', { env: app.get('env').toUpperCase() });
   });
 };
