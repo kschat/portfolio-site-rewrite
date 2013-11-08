@@ -11,4 +11,7 @@ pids
 logs
 results
 
+.nodemonignore
 npm-debug.log
+.sass-cache
+node_modules
