@@ -7,10 +7,10 @@ exports = module.exports = Backbone.Router.extend({
 	},
 
 	routes: {
-		'about': 'about',
 		'projects': 'projects',
 		'resume': 'resume',
 		'blog': 'blog',
+		'about': 'about',
 		'': 'about'
 	},
 
