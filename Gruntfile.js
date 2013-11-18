@@ -8,7 +8,10 @@ module.exports = function(grunt) {
 					'public/js/src/libs/underscore/underscore-1.5.2.js:underscore',
 					'public/js/src/libs/backbone/backbone-1.0.0.js:backbone',
 					'public/js/src/router.js:AppRouter',
-					'public/js/src/views/NavLinkView.js:NavLinkView'
+					'public/js/src/views/NavLinkView.js:NavLinkView',
+					'public/js/src/models/PanelModel.js:PanelModel',
+					'public/js/src/views/PanelView.js:PanelView',
+					'public/js/src/views/LoadingBarView.js:LoadingBar'
 				],
 				shim: {
 					jquery: {
