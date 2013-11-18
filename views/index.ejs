@@ -19,6 +19,9 @@
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
+
+        <div class="loading-bar"></div>
+
         <header class="navbar">
             <div class="navbar-content">
                 <form class="search">
@@ -60,28 +63,28 @@
 
                 <ul class="nav vertical">
                     <li>
-                        <a id="about" href="about" data-bypass="true">
+                        <a id="about" class="main-nav-button" href="about" data-bypass="true">
                             <i class="fa fa-info-circle"></i>
                             <span>About</span>
                         </a>
                     </li>
                     
                     <li>
-                        <a id="projects" href="projects" data-bypass="true">
+                        <a id="projects" class="main-nav-button" href="projects" data-bypass="true">
                             <i class="fa fa-pencil"></i>
                             <span>Projects</span>
                         </a>
                     </li>
                     
                     <li>
-                        <a id="resume" href="resume" data-bypass="true">
+                        <a id="resume" class="main-nav-button" href="resume" data-bypass="true">
                             <i class="fa fa-file-text-o"></i>
                             <span>Resume</span>
                         </a>
                     </li>
                     
                     <li>
-                        <a id="blog" href="blog" data-bypass="true">
+                        <a id="blog" class="main-nav-button" href="blog" data-bypass="true">
                             <i class="fa fa-comments-o"></i>
                             <span>Blog</span>
                         </a>
@@ -92,19 +95,7 @@
 
         <section role="main">
             <div class="background-panel">
-                <div class="panel">
-                    <h3 class="panel-header">About Me</h3>
-
-                    <div class="panel-body">
-                        <p>
-                            I live in Pttsburgh, Pennsylvania and work as a Software Engineer at UPMC. Although my preferred platform is
-                            Linux, I'm currently in a .NET environment at work. In my free time I like to work on side projects - my latest
-                            project being a class scheduler in Node.js - to help sharpen my skills as a programmer.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="panel-overlay"></div>
+                <%-content %>
             </div>
         </section>
 
