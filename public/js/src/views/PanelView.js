@@ -39,7 +39,7 @@ exports = module.exports = Backbone.View.extend({
 	onPanelLoadStart: function(args) {
 		this.vent.trigger('loadingbar:start');
 		
-		this.model.url = '/' + args.sender;
+		this.model.set('page', args.sender);
 		this.model.fetch({
 			xhr: this.setupXhr,
 			success: this.onPanelLoadComplete,
@@ -54,9 +54,12 @@ exports = module.exports = Backbone.View.extend({
 		}.bind(this));
 
 		this.vent.trigger('loadingbar:complete');
+		this.vent.trigger('nav:select', { sender: this.model.get('page') });
 	},
 
 	onPanelLoadError: function(model, response) {
 		this.$el.find('.error > p').html(response.error);
+
+		this.vent.trigger('loadingbar:complete');
 	}
 });

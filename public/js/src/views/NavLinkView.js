@@ -11,12 +11,14 @@ exports = module.exports = Backbone.View.extend({
 	vent: {},
 
 	initialize: function(options) {
-		_.bindAll(this, 'onLinkSelected', 'onNavClick');
+		_.bindAll(this, 'onLinkSelected', 'onNavClick', 'onNavSelect');
 
 		this.id = this.$el.attr('id');
+
 		this.vent = options.vent;
 		this.vent.on('route:' + this.id, this.onLinkSelected);
 		this.vent.on('nav:click', this.onNavClick);
+		this.vent.on('nav:select', this.onNavSelect);
 	},
 
 	render: function() {
@@ -28,14 +30,19 @@ exports = module.exports = Backbone.View.extend({
 	},
 
 	onLinkSelected: function() {
-		this.$el.addClass('selected-link');
-		this.vent.trigger('nav:click', { sender: this.id });
 		this.vent.trigger('panel:loadStart', { sender: this.id });
 	},
 
 	onNavClick: function(args) {
 		if(args.sender !== this.id) {
 			this.$el.removeClass('selected-link');
+		}
+	},
+
+	onNavSelect: function(args) {
+		if(args.sender === this.id) {
+			this.$el.addClass('selected-link');
+			this.vent.trigger('nav:click', { sender: this.id });
 		}
 	}
 });

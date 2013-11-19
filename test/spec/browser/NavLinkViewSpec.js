@@ -9,14 +9,12 @@ describe('NavLinkView', function() {
 		this.vent = _.extend({}, Backbone.Events);
 
 		this.linkSelectedSpy = sinon.spy(NavLinkView.prototype, 'onLinkSelected');
-		this.onNavClickSpy = sinon.spy(NavLinkView.prototype, 'onNavClick');
 
 		this.view = new NavLinkView({ vent: this.vent, id: 'about' });
 	});
 
 	afterEach(function() {
 		this.linkSelectedSpy.restore();
-		this.onNavClickSpy.restore();
 	});
 
 	it('has constructed correctly', function() {
@@ -32,25 +30,29 @@ describe('NavLinkView', function() {
 		this.vent.trigger('route:about');
 
 		expect(this.linkSelectedSpy.calledOnce).to.be.true;
-		expect(this.view.$el.hasClass('selected-link')).to.be.true;
 	});
 
 	it('calls onLinkSelected() when clicked', function() {
 		this.view.$el.trigger('click');
 
 		expect(this.linkSelectedSpy.calledOnce).to.be.true;
-		expect(this.view.$el.hasClass('selected-link')).to.be.true;
 	});
 
-	it('triggers "nav:click" when selected', function() {
+	it('triggers "panel:loadStart" when selected', function() {
 		this.vent.trigger('route:about');
 
-		expect(this.onNavClickSpy.calledWith({ sender: 'about' })).to.be.true;
+		expect(this.linkSelectedSpy.calledOnce).to.be.true;
 	});
 
 	it('unselects itself when "nav:click" is sent from another link', function() {
 		this.vent.trigger('nav:click', { sender: 'other' });
 
 		expect(this.view.$el.hasClass('selected-link')).to.be.false;
+	});
+
+	it('selects itself when "nav:select" is sent and contains its id', function() {
+		this.vent.trigger('nav:select', { sender: 'about' });
+
+		expect(this.view.$el.hasClass('selected-link')).to.be.true;
 	});
 });

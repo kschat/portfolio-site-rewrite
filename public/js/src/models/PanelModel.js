@@ -4,11 +4,12 @@ var _ = require('underscore'),
 	Backbone = require('backbone');
 
 exports = module.exports = Backbone.Model.extend({
-	urlRoot: '/',
-	defaults: {
-		content: ''
+	url: function() {
+		return '/' + this.get('page');
 	},
-	// fetch: function(options) {
-	// 	return Backbone.Collection.prototype.fetch.call(this, options);
-	// }
+	
+	defaults: {
+		content: '',
+		page: 'about'
+	}
 });
