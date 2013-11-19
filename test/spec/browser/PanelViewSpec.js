@@ -3,6 +3,7 @@ var expect = require('chai').expect,
 	$ = require('jQuery'),
 	_ = require('underscore'),
 	Backbone = require('backbone'),
+	PanelModel = require('PanelModel'),
 	PanelView = require('PanelView');
 
 describe('PanelView', function() {
@@ -15,7 +16,7 @@ describe('PanelView', function() {
 
 		this.ajaxStub = sinon.stub($, 'ajax');
 
-		this.model = new Backbone.Model();
+		this.model = new PanelModel({ page: 'about' });
 		this.view = new PanelView({ 
 			model: this.model,
 			vent: this.vent, 

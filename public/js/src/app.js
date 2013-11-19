@@ -2,16 +2,31 @@
     'use strict';
 
     var _ = require('underscore'),
-    	Backbone = require('backbone'),
     	$ = require('jQuery'),
-    	AppRouter = require('AppRouter');
+    	Backbone = require('backbone'),
+    	AppRouter = require('AppRouter'),
+    	NavLinkView = require('NavLinkView'),
+    	PanelView = require('PanelView'),
+    	PanelModel = require('PanelModel'),
+    	LoadingBarView = require('LoadingBarView');
 
     var App = {};
-
+    
     App.vent = _.extend({}, Backbone.Events);
-    App.router = new AppRouter();
+    App.router = new AppRouter({ vent: App.vent });
+
+    App.views = {};
 
     Backbone.history.start({pushState: true});
+
+    $(function() {
+    	App.views.aboutLink = new NavLinkView({ vent: App.vent, el: 'a#about' });
+	    App.views.projectsLink = new NavLinkView({ vent: App.vent, el: 'a#projects' });
+	    App.views.resumeLink = new NavLinkView({ vent: App.vent, el: 'a#resume' });
+	    App.views.blogLink = new NavLinkView({ vent: App.vent, el: 'a#blog' });
+	    App.views.panel = new PanelView({ vent: App.vent, model: new PanelModel(), el: 'div.panel' });
+	    App.views.loadingBar = new LoadingBarView({ vent: App.vent, el: 'div.loading-bar' });
+    });
 
     $(document).on('click', 'a[data-bypass]', function(e) {
     	var href = $(this).attr('href'),
