@@ -634,11 +634,11 @@ ul.nav.vertical li a {
   box-shadow: 0 0 0 0 white;
 }
 
-.navbar form.search {
+.navbar .search {
   position: absolute;
   width: 100%;
 }
-.navbar form.search input[type="text"] {
+.navbar .search .search-box {
   width: 0;
   height: 48px;
   border: 0;
@@ -656,21 +656,21 @@ ul.nav.vertical li a {
   -o-transition: width 1s ease, border-color 0.8s ease;
   transition: width 1s ease, border-color 0.8s ease;
 }
-.navbar form.search input[type="text"]::-webkit-input-placeholder {
+.navbar .search .search-box::-webkit-input-placeholder {
   color: white;
 }
-.navbar form.search input[type="text"]:-moz-placeholder {
+.navbar .search .search-box:-moz-placeholder {
   /* Firefox 18- */
   color: white;
 }
-.navbar form.search input[type="text"]::-moz-placeholder {
+.navbar .search .search-box::-moz-placeholder {
   /* Firefox 19+ */
   color: white;
 }
-.navbar form.search input[type="text"]:-ms-input-placeholder {
+.navbar .search .search-box:-ms-input-placeholder {
   color: white;
 }
-.navbar form.search input[type="text"]:focus {
+.navbar .search.search-active .search-box {
   width: 100%;
   border: 1px solid white;
   -webkit-transition: width 1s ease, border-color 0.8s ease;
@@ -679,11 +679,11 @@ ul.nav.vertical li a {
   -o-transition: width 1s ease, border-color 0.8s ease;
   transition: width 1s ease, border-color 0.8s ease;
 }
-.navbar form.search .search-overlay {
+.navbar .search .search-overlay {
   position: relative;
   z-index: 10;
 }
-.navbar form.search .search-overlay a, .navbar form.search .search-overlay a:link, .navbar form.search .search-overlay a:visited {
+.navbar .search .search-overlay a, .navbar .search .search-overlay a:link, .navbar .search .search-overlay a:visited {
   color: white;
   position: absolute;
   left: 8px;
@@ -696,7 +696,7 @@ ul.nav.vertical li a {
   -o-transition: color 0.8s ease;
   transition: color 0.8s ease;
 }
-.navbar form.search .search-overlay a:hover, .navbar form.search .search-overlay a:active {
+.navbar .search .search-overlay a:hover, .navbar .search .search-overlay a:active {
   color: #c64a49;
   border-bottom: 1px solid #c64a49;
   -webkit-transition: color 0.8s ease, border 0.8s ease;

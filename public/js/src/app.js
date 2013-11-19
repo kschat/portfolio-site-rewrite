@@ -8,7 +8,8 @@
     	NavLinkView = require('NavLinkView'),
     	PanelView = require('PanelView'),
     	PanelModel = require('PanelModel'),
-    	LoadingBarView = require('LoadingBarView');
+    	LoadingBarView = require('LoadingBarView'),
+    	SearchFormView = require('SearchFormView');
 
     var App = {};
     
@@ -17,15 +18,17 @@
 
     App.views = {};
 
-    Backbone.history.start({ pushState: true });
+    Backbone.history.start({ pushState: true, slient: true });
 
     $(function() {
     	App.views.aboutLink = new NavLinkView({ vent: App.vent, el: 'a#about' });
 	    App.views.projectsLink = new NavLinkView({ vent: App.vent, el: 'a#projects' });
 	    App.views.resumeLink = new NavLinkView({ vent: App.vent, el: 'a#resume' });
 	    App.views.blogLink = new NavLinkView({ vent: App.vent, el: 'a#blog' });
+	    
 	    App.views.panel = new PanelView({ vent: App.vent, model: new PanelModel(), el: 'div.panel' });
 	    App.views.loadingBar = new LoadingBarView({ vent: App.vent, el: 'div.loading-bar' });
+	    App.views.searchForm = new SearchFormView({ vent: App.vent, el: 'form.search' });
 
 	    App.vent.trigger('nav:select', { sender: Backbone.history.fragment || 'about' });
     });

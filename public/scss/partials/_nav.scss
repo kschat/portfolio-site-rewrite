@@ -198,11 +198,11 @@ ul.nav.vertical {
 	}
 }
 
-.navbar form.search {
+.navbar .search {
 	position: absolute;
 	width: 100%;
 
-	& input[type="text"] {
+	& .search-box {
 		width: 0;
 		height: $mobileHeaderHeight;
 		border: 0;
@@ -213,12 +213,12 @@ ul.nav.vertical {
 		@include placeholder-color($white);
 		@include border-radius(0);
 		@include transition(width 1s ease, border-color 0.8s ease);
+	}
 
-		&:focus {
-			width: 100%;
-			border: 1px solid $white;
-			@include transition(width 1s ease, border-color 0.8s ease);
-		}
+	&.search-active .search-box {
+		width: 100%;
+		border: 1px solid $white;
+		@include transition(width 1s ease, border-color 0.8s ease);
 	}
 
 	& .search-overlay {
