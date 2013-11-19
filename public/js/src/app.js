@@ -17,7 +17,7 @@
 
     App.views = {};
 
-    Backbone.history.start({pushState: true});
+    Backbone.history.start({ pushState: true });
 
     $(function() {
     	App.views.aboutLink = new NavLinkView({ vent: App.vent, el: 'a#about' });
@@ -26,6 +26,8 @@
 	    App.views.blogLink = new NavLinkView({ vent: App.vent, el: 'a#blog' });
 	    App.views.panel = new PanelView({ vent: App.vent, model: new PanelModel(), el: 'div.panel' });
 	    App.views.loadingBar = new LoadingBarView({ vent: App.vent, el: 'div.loading-bar' });
+
+	    App.vent.trigger('nav:select', { sender: Backbone.history.fragment || 'about' });
     });
 
     $(document).on('click', 'a[data-bypass]', function(e) {

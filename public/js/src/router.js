@@ -2,8 +2,8 @@ var Backbone = require('backbone');
 
 exports = module.exports = Backbone.Router.extend({
 	constructor: function(options) {
-		this.options = options;
 		Backbone.Router.call(this, options);
+		this.vent = options.vent;
 	},
 
 	routes: {
@@ -15,18 +15,18 @@ exports = module.exports = Backbone.Router.extend({
 	},
 
 	about: function() {
-		this.options.vent.trigger('route:about');
+		this.vent.trigger('route:about');
 	},
 
 	projects: function() {
-		this.options.vent.trigger('route:projects');
+		this.vent.trigger('route:projects');
 	},
 
 	resume: function() {
-		this.options.vent.trigger('route:resume');
+		this.vent.trigger('route:resume');
 	},
 
 	blog: function() {
-		this.options.vent.trigger('route:blog');
+		this.vent.trigger('route:blog');
 	}
 });
