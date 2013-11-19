@@ -11,7 +11,7 @@ module.exports = function(grunt) {
 					'public/js/src/views/NavLinkView.js:NavLinkView',
 					'public/js/src/models/PanelModel.js:PanelModel',
 					'public/js/src/views/PanelView.js:PanelView',
-					'public/js/src/views/LoadingBarView.js:LoadingBar'
+					'public/js/src/views/LoadingBarView.js:LoadingBarView'
 				],
 				shim: {
 					jquery: {

@@ -160,12 +160,12 @@ ul.nav.vertical {
 		content: "";
 		@include transition(width 0.8s ease, border-right 0.8s ease);
 	}
-}
 
-@include selectedLink("about");
-@include selectedLink("projects");
-@include selectedLink("resume");
-@include selectedLink("blog");
+	& a.selected-link::before {
+		display: block;
+		border-right: 10px solid $white;
+	}
+}
 
 .side-nav-content {
 	//padding-top: 10px; media query
