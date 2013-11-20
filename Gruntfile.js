@@ -10,9 +10,12 @@ module.exports = function(grunt) {
 					'public/js/src/router.js:AppRouter',
 					'public/js/src/views/NavLinkView.js:NavLinkView',
 					'public/js/src/models/PanelModel.js:PanelModel',
+					'public/js/src/models/SearchItem.js:SearchItem',
 					'public/js/src/views/PanelView.js:PanelView',
 					'public/js/src/views/LoadingBarView.js:LoadingBarView',
-					'public/js/src/views/SearchFormView.js:SearchFormView'
+					'public/js/src/views/SearchFormView.js:SearchFormView',
+					'public/js/src/collections/SearchItemList.js:SearchItemList',
+
 				],
 				shim: {
 					jquery: {
@@ -47,7 +50,7 @@ module.exports = function(grunt) {
 		},
 		uglify: {
 			prod: {
-				src: ['public/js/build/*.js', '!public/js/build/main.min.js'],
+				src: ['public/js/build/*.js', '!public/js/build/main.min.js', '!public/js/build/test.js'],
 				dest: 'public/js/build/main.min.js'
 			}
 		},

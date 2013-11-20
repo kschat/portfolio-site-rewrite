@@ -33,12 +33,11 @@ describe('AppRouter', function() {
 	});
 
 	it('has a "vent" object at construction', function() {
-		expect(router.options).to.exist;
-		expect(router.options.vent).to.exist;
+		expect(router.vent).to.exist;
 	});
 
 	it('has the "about" route', function() {
-		expect(router.routes['']).to.equal('about');
+		expect(router.routes['/']).to.equal('about');
 		expect(router.routes['about']).to.equal('about');
 	});
 
@@ -48,7 +47,7 @@ describe('AppRouter', function() {
 			router.about();
 		});
 
-		router.navigate('');
+		router.navigate('/');
 		router.navigate('about');
 
 		expect(pushStateSpy.calledTwice).to.be.true;

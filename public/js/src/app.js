@@ -9,15 +9,19 @@
     	PanelView = require('PanelView'),
     	PanelModel = require('PanelModel'),
     	LoadingBarView = require('LoadingBarView'),
-    	SearchFormView = require('SearchFormView');
+    	SearchFormView = require('SearchFormView'),
+    	SearchItemList = require('SearchItemList');
 
     var App = {};
     
     App.vent = _.extend({}, Backbone.Events);
-    App.router = new AppRouter({ vent: App.vent });
 
     App.views = {};
+    App.collections = {};
 
+    App.collections.searchItems = new SearchItemList();
+
+    App.router = new AppRouter({ vent: App.vent });
     Backbone.history.start({ pushState: true, slient: true });
 
     $(function() {
@@ -28,7 +32,7 @@
 	    
 	    App.views.panel = new PanelView({ vent: App.vent, model: new PanelModel(), el: 'div.panel' });
 	    App.views.loadingBar = new LoadingBarView({ vent: App.vent, el: 'div.loading-bar' });
-	    App.views.searchForm = new SearchFormView({ vent: App.vent, el: 'form.search' });
+	    App.views.searchForm = new SearchFormView({ vent: App.vent, el: 'form.search', searchItems: App.collections.searchItems });
 
 	    App.vent.trigger('nav:select', { sender: Backbone.history.fragment || 'about' });
     });
