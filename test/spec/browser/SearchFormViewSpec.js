@@ -57,17 +57,17 @@ describe('SearchFormView', function() {
 		expect($searchBox.width()).to.equal(0);
 	});
 
-	it('triggers a search request after the user has stopped typing for 3 seconds', function() {
+	it('triggers a search request after the user has stopped typing for 2 seconds', function() {
 		this.ajaxStub.yieldsTo('success');
 		this.view.$el.find('.search-box').trigger('keyup');
 
 		expect(this.makeSearchRequestSpy.calledOnce).to.be.false;
 
-		this.clock.tick(1000);
+		this.clock.tick(500);
 
 		expect(this.makeSearchRequestSpy.calledOnce).to.be.false;
 
-		this.clock.tick(2000);
+		this.clock.tick(1500);
 
 		expect(this.searchTextChangedSpy.calledOnce).to.be.true;
 		expect(this.makeSearchRequestSpy.calledOnce).to.be.true;
@@ -75,15 +75,15 @@ describe('SearchFormView', function() {
 
 		this.view.$el.find('.search-box').trigger('keyup');
 
-		this.clock.tick(2000);
+		this.clock.tick(1000);
 
 		this.view.$el.find('.search-box').trigger('keyup');
 
-		this.clock.tick(1000);
+		this.clock.tick(1500);
 
 		expect(this.makeSearchRequestSpy.calledTwice).to.be.false;
 
-		this.clock.tick(2000);
+		this.clock.tick(500);
 
 		expect(this.makeSearchRequestSpy.calledTwice).to.be.true;
 		expect(this.searchTextChangedSpy.calledThrice).to.be.true;
@@ -114,7 +114,7 @@ describe('SearchFormView', function() {
 		this.ajaxStub.yieldsTo('success');
 		
 		this.view.$el.find('.search-box').val('test query').trigger('keyup');
-		this.clock.tick(3000);
+		this.clock.tick(2000);
 
 		expect(this.view.searchItems.url()).to.equal('/api/search?q=test query');
 	});

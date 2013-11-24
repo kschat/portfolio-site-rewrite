@@ -14,8 +14,8 @@ module.exports = function(grunt) {
 					'public/js/src/views/PanelView.js:PanelView',
 					'public/js/src/views/LoadingBarView.js:LoadingBarView',
 					'public/js/src/views/SearchFormView.js:SearchFormView',
-					'public/js/src/collections/SearchItemList.js:SearchItemList',
-
+					'public/js/src/views/SearchResultDropdown.js:SearchResultDropdown',
+					'public/js/src/collections/SearchItemList.js:SearchItemList'
 				],
 				shim: {
 					jquery: {
@@ -124,7 +124,8 @@ module.exports = function(grunt) {
 				options: {
 					specs: 'public/js/build/test.js',
 					vendor: ['node_modules/sinon/pkg/sinon.js', 'node_modules/chai/chai.js', 'public/js/build/libs.js'],
-					outfile: 'test/_SpecRunner.html'
+					outfile: 'test/_SpecRunner.html',
+					keepRunner: true
 				}
 			}
 		}

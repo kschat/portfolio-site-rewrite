@@ -60,6 +60,13 @@
 	transition: $var;
 }
 
+@mixin transition-delay($var...) {
+	-webkit-transition-delay: $var;
+	-moz-transition-delay: $var;
+	-o-transition-delay: $var;
+	transition-delay: $var;
+}
+
 @mixin transparency($val) {
 	zoom: 1;
 	filter: alpha(opacity=$val*100);
@@ -125,19 +132,6 @@
 	-moz-animation: $var;
 	-o-animation: $var;
 	animation: $var;
-}
-
-@mixin selectedLink($id) {
-	// ##{$id}:target {
-	// 	color: $white;
-	// } media query
-
-	##{$id}:target::before {
-		display: block;
-		border-right: 10px solid $white;
-
-		//width: 100%; media query
-	}
 }
 
 @mixin triangle($size, $color) {

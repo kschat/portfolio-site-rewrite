@@ -11,7 +11,7 @@ exports = module.exports = Backbone.Router.extend({
 		'resume': 'resume',
 		'blog': 'blog',
 		'about': 'about',
-		'/': 'about'
+		'': 'about'
 	},
 
 	about: function() {

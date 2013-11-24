@@ -10,7 +10,8 @@
     	PanelModel = require('PanelModel'),
     	LoadingBarView = require('LoadingBarView'),
     	SearchFormView = require('SearchFormView'),
-    	SearchItemList = require('SearchItemList');
+    	SearchItemList = require('SearchItemList'),
+    	SearchResultDropdown = require('SearchResultDropdown');
 
     var App = {};
     
@@ -32,7 +33,9 @@
 	    
 	    App.views.panel = new PanelView({ vent: App.vent, model: new PanelModel(), el: 'div.panel' });
 	    App.views.loadingBar = new LoadingBarView({ vent: App.vent, el: 'div.loading-bar' });
+
 	    App.views.searchForm = new SearchFormView({ vent: App.vent, el: 'form.search', searchItems: App.collections.searchItems });
+	    App.views.searchDropdown = new SearchResultDropdown({ vent: App.vent, el: '.search-results-overlay' });
 
 	    App.vent.trigger('nav:select', { sender: Backbone.history.fragment || 'about' });
     });

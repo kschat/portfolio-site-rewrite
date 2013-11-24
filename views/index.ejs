@@ -33,7 +33,7 @@
                     </span>
                 </form>
 
-                <a class="brand" href="#">Kyle Schattler</a>
+                <div class="brand">Kyle Schattler</div>
 
                 <ul class="nav pull-right">
                     <li>
@@ -57,9 +57,7 @@
         
         <section class="side-nav">
             <div class="side-nav-content">
-                <div>
-                    <img class="thumb" src="images/danandi.jpg">
-                </div>
+                <img class="thumb">
 
                 <ul class="nav vertical">
                     <li>
@@ -91,25 +89,29 @@
                     </li>
                 </ul>
             </div>
-        </section>
 
-        <section role="main">
-            <div class="background-panel">
-                <%-content %>
+            <div class="footer">
+                <p>&copy; <span class="name">Kyle Schattler</span> 2013</p>
             </div>
         </section>
 
-        <div class="search-results-overlay" style="display: none;">
+        <section role="main">
+            <!-- <div class="background-panel"> -->
+                <%-content %>
+            <!-- </div> -->
+        </section>
+
+        <div class="search-results-overlay overlay fade out">
             <div class="container-fluid search-results-container">
                 <div class="search-overlay-close">
-                    <a href="#">
-                        <i class="icon-remove"></i>
+                    <a id="search-close-btn" href="#">
+                        <i class="fa fa-times"></i>
                     </a>
                 </div>
 
                 <div class="row-fluid search-overlay-header">
                     <div class="span12">
-                        <h2>Search projects and blog posts</h2>
+                        <h2 id="search-results-label">Search projects and blog posts</h2>
                     </div>
                 </div>
 
@@ -117,7 +119,7 @@
                     <div class="span12">
                         <div class="search-overlay-content">
                             <ul class="search-overlay-list">
-                                <li class="list-title">
+                                <!-- <li class="list-title">
                                     <a href="#">
                                         <h3>Projects</h3>
                                     </a>
@@ -155,7 +157,7 @@
                                         <h4>Sample search result 2</h4>
                                         <p class="list-description">Sample result description</p>
                                     </a>
-                                </li>                                
+                                </li>                                 -->
                             </ul>
                         </div>
                     </div>
