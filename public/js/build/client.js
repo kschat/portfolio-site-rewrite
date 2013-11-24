@@ -1672,6 +1672,8 @@ var global=typeof self !== "undefined" ? self : typeof window !== "undefined" ? 
 
 }).call(global, undefined, undefined, undefined, function defineExport(ex) { module.exports = ex; });
 
+},{}],"underscore":[function(require,module,exports){
+module.exports=require('XPLxig');
 },{}],"XPLxig":[function(require,module,exports){
 //     Underscore.js 1.5.2
 //     http://underscorejs.org
@@ -2949,10 +2951,6 @@ var global=typeof self !== "undefined" ? self : typeof window !== "undefined" ? 
   });
 
 }).call(this);
-},{}],"underscore":[function(require,module,exports){
-module.exports=require('XPLxig');
-},{}],"PanelModel":[function(require,module,exports){
-module.exports=require('8IJdrr');
 },{}],"8IJdrr":[function(require,module,exports){
 //PanelModel.js
 
@@ -2969,7 +2967,9 @@ exports = module.exports = Backbone.Model.extend({
 		page: 'about'
 	}
 });
-},{"backbone":"rooe+8","underscore":"XPLxig"}],"SearchItem":[function(require,module,exports){
+},{"backbone":"rooe+8","underscore":"XPLxig"}],"PanelModel":[function(require,module,exports){
+module.exports=require('8IJdrr');
+},{}],"SearchItem":[function(require,module,exports){
 module.exports=require('1Wkqup');
 },{}],"1Wkqup":[function(require,module,exports){
 //SearchItem.js
@@ -3024,6 +3024,8 @@ exports = module.exports = Backbone.Router.extend({
 });
 },{"backbone":"rooe+8"}],"AppRouter":[function(require,module,exports){
 module.exports=require('gW/Jx7');
+},{}],"LoadingBarView":[function(require,module,exports){
+module.exports=require('kZ72nW');
 },{}],"kZ72nW":[function(require,module,exports){
 //LoadingBarView.js
 
@@ -3066,9 +3068,7 @@ exports = module.exports = Backbone.View.extend({
 		}).bind(this));
 	}
 });
-},{"backbone":"rooe+8","underscore":"XPLxig"}],"LoadingBarView":[function(require,module,exports){
-module.exports=require('kZ72nW');
-},{}],"NavLinkView":[function(require,module,exports){
+},{"backbone":"rooe+8","underscore":"XPLxig"}],"NavLinkView":[function(require,module,exports){
 module.exports=require('Ae30Bo');
 },{}],"Ae30Bo":[function(require,module,exports){
 //NavLinkView.js
@@ -3348,5 +3348,5 @@ exports = module.exports = Backbone.View.extend({
 			 { title: title, content: content });
 	}
 });
-},{"backbone":"rooe+8","underscore":"XPLxig"}]},{},[1,"1Wkqup","8IJdrr","W4P0a9","gW/Jx7","Ae30Bo","kZ72nW","MKmzuj","Y7j/Ux","Z8EH3u"])
+},{"backbone":"rooe+8","underscore":"XPLxig"}]},{},[1,"W4P0a9","8IJdrr","1Wkqup","gW/Jx7","kZ72nW","Ae30Bo","MKmzuj","Y7j/Ux","Z8EH3u"])
 ;
