@@ -23,8 +23,6 @@ exports = module.exports = Backbone.View.extend({
 		this.vent.on('search:active', this.displayDropdown);
 		this.vent.on('search:inactive', this.hideDropdown);
 		this.vent.on('search:success', this.displayResults);
-
-		console.log(this.$el, this.$resultsList);
 	},
 
 	render: function() {
