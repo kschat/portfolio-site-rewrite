@@ -2969,8 +2969,6 @@ exports = module.exports = Backbone.Model.extend({
 });
 },{"backbone":"rooe+8","underscore":"XPLxig"}],"PanelModel":[function(require,module,exports){
 module.exports=require('8IJdrr');
-},{}],"SearchItem":[function(require,module,exports){
-module.exports=require('1Wkqup');
 },{}],"1Wkqup":[function(require,module,exports){
 //SearchItem.js
 
@@ -2989,7 +2987,11 @@ exports = module.exports = Backbone.Model.extend({
 		description: ''
 	}
 });
-},{"backbone":"rooe+8","underscore":"XPLxig"}],"gW/Jx7":[function(require,module,exports){
+},{"backbone":"rooe+8","underscore":"XPLxig"}],"SearchItem":[function(require,module,exports){
+module.exports=require('1Wkqup');
+},{}],"AppRouter":[function(require,module,exports){
+module.exports=require('gW/Jx7');
+},{}],"gW/Jx7":[function(require,module,exports){
 var Backbone = require('backbone');
 
 exports = module.exports = Backbone.Router.extend({
@@ -3008,10 +3010,12 @@ exports = module.exports = Backbone.Router.extend({
 
 	about: function() {
 		this.vent.trigger('route:about');
+		console.log('about');
 	},
 
 	projects: function() {
 		this.vent.trigger('route:projects');
+		console.log('projects');
 	},
 
 	resume: function() {
@@ -3022,11 +3026,7 @@ exports = module.exports = Backbone.Router.extend({
 		this.vent.trigger('route:blog');
 	}
 });
-},{"backbone":"rooe+8"}],"AppRouter":[function(require,module,exports){
-module.exports=require('gW/Jx7');
-},{}],"LoadingBarView":[function(require,module,exports){
-module.exports=require('kZ72nW');
-},{}],"kZ72nW":[function(require,module,exports){
+},{"backbone":"rooe+8"}],"kZ72nW":[function(require,module,exports){
 //LoadingBarView.js
 
 var _ = require('underscore'),
@@ -3068,7 +3068,9 @@ exports = module.exports = Backbone.View.extend({
 		}).bind(this));
 	}
 });
-},{"backbone":"rooe+8","underscore":"XPLxig"}],"NavLinkView":[function(require,module,exports){
+},{"backbone":"rooe+8","underscore":"XPLxig"}],"LoadingBarView":[function(require,module,exports){
+module.exports=require('kZ72nW');
+},{}],"NavLinkView":[function(require,module,exports){
 module.exports=require('Ae30Bo');
 },{}],"Ae30Bo":[function(require,module,exports){
 //NavLinkView.js
@@ -3119,9 +3121,7 @@ exports = module.exports = Backbone.View.extend({
 		}
 	}
 });
-},{"backbone":"rooe+8","underscore":"XPLxig"}],"PanelView":[function(require,module,exports){
-module.exports=require('MKmzuj');
-},{}],"MKmzuj":[function(require,module,exports){
+},{"backbone":"rooe+8","underscore":"XPLxig"}],"MKmzuj":[function(require,module,exports){
 //PanelView.js
 
 var _ = require('underscore'),
@@ -3187,7 +3187,9 @@ exports = module.exports = Backbone.View.extend({
 		this.vent.trigger('loadingbar:complete');
 	}
 });
-},{"backbone":"rooe+8","underscore":"XPLxig"}],"Y7j/Ux":[function(require,module,exports){
+},{"backbone":"rooe+8","underscore":"XPLxig"}],"PanelView":[function(require,module,exports){
+module.exports=require('MKmzuj');
+},{}],"Y7j/Ux":[function(require,module,exports){
 //SearchFormView.js
 
 var _ = require('underscore'),
@@ -3263,8 +3265,6 @@ exports = module.exports = Backbone.View.extend({
 });
 },{"SearchItemList":"W4P0a9","backbone":"rooe+8","underscore":"XPLxig"}],"SearchFormView":[function(require,module,exports){
 module.exports=require('Y7j/Ux');
-},{}],"SearchResultDropdown":[function(require,module,exports){
-module.exports=require('Z8EH3u');
 },{}],"Z8EH3u":[function(require,module,exports){
 //SearchResultDropdown.js
 
@@ -3348,5 +3348,7 @@ exports = module.exports = Backbone.View.extend({
 			 { title: title, content: content });
 	}
 });
-},{"backbone":"rooe+8","underscore":"XPLxig"}]},{},[1,"W4P0a9","8IJdrr","1Wkqup","gW/Jx7","kZ72nW","Ae30Bo","MKmzuj","Y7j/Ux","Z8EH3u"])
+},{"backbone":"rooe+8","underscore":"XPLxig"}],"SearchResultDropdown":[function(require,module,exports){
+module.exports=require('Z8EH3u');
+},{}]},{},[1,"W4P0a9","8IJdrr","1Wkqup","gW/Jx7","kZ72nW","Ae30Bo","MKmzuj","Y7j/Ux","Z8EH3u"])
 ;
