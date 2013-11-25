@@ -16,10 +16,12 @@ exports = module.exports = Backbone.Router.extend({
 
 	about: function() {
 		this.vent.trigger('route:about');
+		console.log('about');
 	},
 
 	projects: function() {
 		this.vent.trigger('route:projects');
+		console.log('projects');
 	},
 
 	resume: function() {
