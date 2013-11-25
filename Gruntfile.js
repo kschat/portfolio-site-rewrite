@@ -49,8 +49,12 @@ module.exports = function(grunt) {
 			}
 		},
 		uglify: {
-			prod: {
+			all: {
 				src: ['public/js/build/*.js', '!public/js/build/main.min.js', '!public/js/build/test.js'],
+				dest: 'public/js/build/main.min.js'
+			},
+			prod: {
+				src: 'public/js/build/main.js',
 				dest: 'public/js/build/main.min.js'
 			}
 		},
