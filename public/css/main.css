@@ -1473,8 +1473,11 @@ fieldset {
   .side-nav .nav i {
     font-size: 22px;
   }
+  .side-nav .nav a {
+    line-height: 32px !important;
+  }
   .side-nav a::before {
-    top: 4px;
+    top: 2px;
   }
 }
 /* tablets */

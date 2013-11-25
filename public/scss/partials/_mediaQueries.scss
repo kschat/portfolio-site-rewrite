@@ -12,6 +12,10 @@
 			font-size: $mobileLandscapeLeftNavIconSize;
     	}
 
+    	& .nav a {
+    		line-height: $mobileLandscapeLeftNavLineHeight !important;
+    	}
+
 		& a::before {
 			top: $mobileLandscapeArrowTopSize;
 		}
