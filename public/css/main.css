@@ -1498,11 +1498,11 @@ fieldset {
 
   .navbar .search .search-box {
     height: 48px;
-    -webkit-transition: height 0.8s ease 0.5s;
-    -moz-transition: height 0.8s ease 0.5s;
-    -ms-transition: height 0.8s ease 0.5s;
-    -o-transition: height 0.8s ease 0.5s;
-    transition: height 0.8s ease 0.5s;
+    -webkit-transition: height 0.8s ease 0.5s, width 1s ease, border-color 0.8s ease;
+    -moz-transition: height 0.8s ease 0.5s, width 1s ease, border-color 0.8s ease;
+    -ms-transition: height 0.8s ease 0.5s, width 1s ease, border-color 0.8s ease;
+    -o-transition: height 0.8s ease 0.5s, width 1s ease, border-color 0.8s ease;
+    transition: height 0.8s ease 0.5s, width 1s ease, border-color 0.8s ease;
   }
 
   .side-nav {
