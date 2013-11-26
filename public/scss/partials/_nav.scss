@@ -28,7 +28,7 @@
 	@extend %generic-navbar;
 	position: fixed;
 
-	@include transition(height 0.8s ease);
+	@include transition(height 0.8s ease, font-size 0.8s ease);
 
 	& .navbar-content {
 		@extend %generic-navbar-content;
@@ -66,7 +66,7 @@
 ul.nav {
 	@extend %generic-nav;
 	position: relative;
-	font-size: $mobileHeaderFontSize;
+	//font-size: $mobileHeaderFontSize;
 
 	& li {
 		display: inline-block;
@@ -145,11 +145,11 @@ ul.nav.vertical {
 	& a::before {
 		position: absolute;
 		right: 0;
-		top: 8px;
+		top: $mobileArrowTopSize;
 		width: 0;
 		height: 0;
 		
-		@include triangle(10px, $white);
+		@include triangle($mobileArrowSize, $white);
 		border-right: 0px solid $white;
 
 		content: "";
@@ -158,7 +158,7 @@ ul.nav.vertical {
 
 	& a.selected-link::before {
 		display: block;
-		border-right: 10px solid $white;
+		border-right: $mobileArrowSize solid $white;
 	}
 
 	& .thumb {
@@ -214,6 +214,7 @@ ul.nav.vertical {
 	width: 100%;
 
 	& .search-box {
+		visibility: hidden;
 		width: 0;
 		height: $mobileHeaderHeight;
 		border: 0;
@@ -227,6 +228,7 @@ ul.nav.vertical {
 	}
 
 	&.search-active .search-box {
+		visibility: visible;
 		width: 100%;
 		border: 1px solid $white;
 		@include transition(width 1s ease, border-color 0.8s ease);
@@ -302,6 +304,11 @@ ul.nav.vertical {
 	& .search-overlay-header {
 		width: 100%;
 		text-align: center;
+
+		h2 {
+			font-size: $mobilePanelHeaderFontSize;
+			line-height: $mobilePanelHeaderLineHeight;
+		}
 	}
 
 	& .search-overlay-close {

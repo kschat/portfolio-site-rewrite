@@ -39,14 +39,19 @@ section[role='main'] {
 	height: 100%;
 	float: right;
 
+	padding-top: $mobilePanelTopPadding;
+
 	background-color: $white;
+
+	@include transition(padding-top 0.8s ease);
 
 	& .panel-header {
 		width: 100%;
 		color: $headerFontColor;
 		background-color: $white;
 
-		font-size: 24px;
+		font-size: $mobilePanelHeaderFontSize;
+		line-height: $mobilePanelHeaderLineHeight;
 
 		padding: 2px 24px;
 
@@ -56,7 +61,6 @@ section[role='main'] {
 	& .panel-body {
 		width: 100%;
 		padding: 8px 24px;
-		padding-top: 0;
 		background-color: $white;
 
 		@include transition(font-size 0.8s ease);

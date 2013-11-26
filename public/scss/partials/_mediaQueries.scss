@@ -18,6 +18,13 @@
 
 		& a::before {
 			top: $mobileLandscapeArrowTopSize;
+			@include triangle($mobileLandscapeArrowSize, $white);
+			border-right: 0px solid $white;
+		}
+
+		& a.selected-link::before {
+			display: block;
+			border-right: $mobileArrowSize solid $white;
 		}
     }
 
@@ -32,11 +39,11 @@
 
 	.navbar {
 		height: $desktopHeaderHeight;
+		font-size: $desktopHeaderFontSize;
 		line-height: $desktopHeaderLineHeight;
 
 		& .navbar-content {
 			height: $desktopHeaderHeight;
-			line-height: $desktopHeaderLineHeight;
 		}
 	}
 
@@ -138,19 +145,29 @@
 
 	.panel {
 		min-width: 610px;
-
-		& .panel-header {
-			font-size: $desktopHeaderFontSize;
-		}
 	}
 
 	.loading-bar {
 		height: 2px;
 	}
+
+	.search-results-overlay {
+		& .search-overlay-header {
+			h2 {
+				font-size: $desktopPanelHeaderFontSize;
+				line-height: $desktopPanelHeaderLineHeight;
+			}
+		}
+	}
 }
 
 /* desktop */
 @media only screen and (min-width: 1225px) {
+	body {
+		font-size: $desktopFontSize;
+		line-height: $desktopLineHeight;
+	}
+
 	.side-nav {
 		max-width: $desktopLeftNavMaxWidth;
 
@@ -165,6 +182,15 @@
 
 	ul.nav.vertical {
 		margin-top: 20px;
+	}
+
+	.panel {
+		padding-top: $desktopPanelTopPadding;
+
+		& .panel-header {
+			font-size: $desktopPanelHeaderFontSize;
+			line-height: $desktopPanelHeaderLineHeight;
+		}
 	}
 }
 

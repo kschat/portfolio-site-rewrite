@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+@import url(http://fonts.googleapis.com/css?family=Droid+Serif);
 /* _base.scss */
 /* _all.scss */
 /* _colors.scss */
@@ -11,7 +11,7 @@ a {
 
 section[role='main'] {
   padding-top: 40px;
-  padding-left: 60px;
+  padding-left: 50px;
   height: 100%;
   background-color: white;
   -webkit-transition: padding-left 0.8s ease;
@@ -42,13 +42,20 @@ section[role='main'] {
   width: 100%;
   height: 100%;
   float: right;
+  padding-top: 10px;
   background-color: white;
+  -webkit-transition: padding-top 0.8s ease;
+  -moz-transition: padding-top 0.8s ease;
+  -ms-transition: padding-top 0.8s ease;
+  -o-transition: padding-top 0.8s ease;
+  transition: padding-top 0.8s ease;
 }
 .panel .panel-header {
   width: 100%;
   color: #909090;
   background-color: white;
-  font-size: 24px;
+  font-size: 30px;
+  line-height: 32px;
   padding: 2px 24px;
   -webkit-transition: font-size 0.8s ease;
   -moz-transition: font-size 0.8s ease;
@@ -59,7 +66,6 @@ section[role='main'] {
 .panel .panel-body {
   width: 100%;
   padding: 8px 24px;
-  padding-top: 0;
   background-color: white;
   -webkit-transition: font-size 0.8s ease;
   -moz-transition: font-size 0.8s ease;
@@ -543,11 +549,11 @@ ul.nav {
 
 .navbar {
   position: fixed;
-  -webkit-transition: height 0.8s ease;
-  -moz-transition: height 0.8s ease;
-  -ms-transition: height 0.8s ease;
-  -o-transition: height 0.8s ease;
-  transition: height 0.8s ease;
+  -webkit-transition: height 0.8s ease, font-size 0.8s ease;
+  -moz-transition: height 0.8s ease, font-size 0.8s ease;
+  -ms-transition: height 0.8s ease, font-size 0.8s ease;
+  -o-transition: height 0.8s ease, font-size 0.8s ease;
+  transition: height 0.8s ease, font-size 0.8s ease;
 }
 .navbar .navbar-content {
   background-color: #333333;
@@ -587,7 +593,6 @@ ul.nav {
 
 ul.nav {
   position: relative;
-  font-size: 18px;
 }
 ul.nav li {
   display: inline-block;
@@ -627,7 +632,7 @@ ul.nav.vertical li a {
   -moz-box-shadow: inset -7px 7px 14px -7px #444444;
   -webkit-box-shadow: inset -7px 7px 14px -7px #444444;
   box-shadow: inset -7px 7px 14px -7px #444444;
-  width: 60px;
+  width: 50px;
   height: 100%;
   -webkit-transition: width 0.8s ease, min-width 0.8s ease;
   -moz-transition: width 0.8s ease, min-width 0.8s ease;
@@ -641,10 +646,10 @@ ul.nav.vertical li a {
 }
 .side-nav .nav i {
   display: block;
-  font-size: 30px;
+  font-size: 24px;
 }
 .side-nav .nav a, .side-nav .nav a:link, .side-nav .nav a:visited {
-  font-size: 13px;
+  font-size: 11px;
   color: white;
   outline: none;
   -webkit-transition: color 0.8s ease;
@@ -662,12 +667,12 @@ ul.nav.vertical li a {
 .side-nav a::before {
   position: absolute;
   right: 0;
-  top: 8px;
+  top: 2px;
   width: 0;
   height: 0;
-  border-right: 10px solid white;
-  border-bottom: 10px solid transparent;
-  border-top: 10px solid transparent;
+  border-right: 8px solid white;
+  border-bottom: 8px solid transparent;
+  border-top: 8px solid transparent;
   border-right: 0px solid white;
   content: "";
   -webkit-transition: width 0.8s ease, border-right 0.8s ease;
@@ -678,7 +683,7 @@ ul.nav.vertical li a {
 }
 .side-nav a.selected-link::before {
   display: block;
-  border-right: 10px solid white;
+  border-right: 8px solid white;
 }
 .side-nav .thumb {
   display: block;
@@ -729,6 +734,7 @@ ul.nav.vertical li a {
   width: 100%;
 }
 .navbar .search .search-box {
+  visibility: hidden;
   width: 0;
   height: 40px;
   border: 0;
@@ -761,6 +767,7 @@ ul.nav.vertical li a {
   color: white;
 }
 .navbar .search.search-active .search-box {
+  visibility: visible;
   width: 100%;
   border: 1px solid white;
   -webkit-transition: width 1s ease, border-color 0.8s ease;
@@ -838,6 +845,10 @@ ul.nav.vertical li a {
 .search-results-overlay .search-overlay-header {
   width: 100%;
   text-align: center;
+}
+.search-results-overlay .search-overlay-header h2 {
+  font-size: 30px;
+  line-height: 32px;
 }
 .search-results-overlay .search-overlay-close {
   position: fixed;
@@ -1471,13 +1482,21 @@ fieldset {
 @media only screen and (max-width: 767px) and (orientation: landscape) {
   /* portrait phones */
   .side-nav .nav i {
-    font-size: 22px;
+    font-size: 20px;
   }
   .side-nav .nav a {
-    line-height: 32px !important;
+    line-height: 28px !important;
   }
   .side-nav a::before {
     top: 2px;
+    border-right: 6px solid white;
+    border-bottom: 6px solid transparent;
+    border-top: 6px solid transparent;
+    border-right: 0px solid white;
+  }
+  .side-nav a.selected-link::before {
+    display: block;
+    border-right: 8px solid white;
   }
 }
 /* tablets */
@@ -1489,11 +1508,11 @@ fieldset {
 
   .navbar {
     height: 48px;
+    font-size: 22px;
     line-height: 48px;
   }
   .navbar .navbar-content {
     height: 48px;
-    line-height: 48px;
   }
 
   .navbar .search .search-box {
@@ -1589,16 +1608,23 @@ fieldset {
   .panel {
     min-width: 610px;
   }
-  .panel .panel-header {
-    font-size: 34px;
-  }
 
   .loading-bar {
     height: 2px;
   }
+
+  .search-results-overlay .search-overlay-header h2 {
+    font-size: 50px;
+    line-height: 54px;
+  }
 }
 /* desktop */
 @media only screen and (min-width: 1225px) {
+  body {
+    font-size: 22px;
+    line-height: 34px;
+  }
+
   .side-nav {
     max-width: 300px;
   }
@@ -1617,6 +1643,14 @@ fieldset {
 
   ul.nav.vertical {
     margin-top: 20px;
+  }
+
+  .panel {
+    padding-top: 30px;
+  }
+  .panel .panel-header {
+    font-size: 50px;
+    line-height: 54px;
   }
 }
 /* large desktops */
