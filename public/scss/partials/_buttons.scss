@@ -1,0 +1,55 @@
+/* _button.scss */
+
+.btn {
+  display: block;
+
+  padding: 6px 12px;
+  margin-bottom: 6px;
+  border-radius: 6px;
+
+  background-color: $white;
+  color: $blackLighter;
+
+  border: 1px solid $gray;
+
+  @include transition(background-color 0.3s ease, border-color 0.3s ease);
+
+  &:hover,
+  &:active,
+  &:focus {
+    text-decoration: none;
+    outline: none;
+  }
+
+  &:hover {
+    background-color: darken($white, 10%);
+    border: 1px solid $grayDark;
+  }
+
+  &:active {
+    @include transition(none);
+    background-color: $gray;
+  }
+
+  &.btn-primary {
+    background-color: $cyan;
+    color: $white;
+    border-color: darken($cyan, 10%);
+
+    &:hover {
+      background-color: darken($cyan, 10%);
+    }
+
+    &:active {
+      background-color: $cyan;
+      color: $white;
+    }
+  }
+}
+
+@media #{$medium} {
+  .btn {
+    display: inline-block;
+    margin-bottom: 0;
+  }
+}

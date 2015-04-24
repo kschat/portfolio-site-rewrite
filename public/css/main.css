@@ -130,9 +130,11 @@ section[role='main'] {
 
 .list {
   list-style-type: none;
+  padding-left: 0;
 }
 .list .item {
-  margin-bottom: 10px;
+  padding: 10px 0;
+  margin-bottom: 30px;
 }
 .list .item .title {
   padding-bottom: 6px;
@@ -931,6 +933,56 @@ ul.nav.vertical li a {
 }
 
 /* _typography.scss */
+/* _button.scss */
+.btn {
+  display: block;
+  padding: 6px 12px;
+  margin-bottom: 6px;
+  border-radius: 6px;
+  background-color: #fff;
+  color: #333333;
+  border: 1px solid #c5c5c5;
+  -webkit-transition: background-color 0.3s ease, border-color 0.3s ease;
+  -moz-transition: background-color 0.3s ease, border-color 0.3s ease;
+  -ms-transition: background-color 0.3s ease, border-color 0.3s ease;
+  -o-transition: background-color 0.3s ease, border-color 0.3s ease;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+.btn:hover, .btn:active, .btn:focus {
+  text-decoration: none;
+  outline: none;
+}
+.btn:hover {
+  background-color: #e6e6e6;
+  border: 1px solid #acacac;
+}
+.btn:active {
+  -webkit-transition: none;
+  -moz-transition: none;
+  -ms-transition: none;
+  -o-transition: none;
+  transition: none;
+  background-color: #c5c5c5;
+}
+.btn.btn-primary {
+  background-color: #c64a49;
+  color: #fff;
+  border-color: #a83534;
+}
+.btn.btn-primary:hover {
+  background-color: #a83534;
+}
+.btn.btn-primary:active {
+  background-color: #c64a49;
+  color: #fff;
+}
+
+@media only screen and (min-width: 768px) {
+  .btn {
+    display: inline-block;
+    margin-bottom: 0;
+  }
+}
 /*! normalize.css v1.1.1 | MIT License | git.io/normalize */
 /* ==========================================================================
    HTML5 display definitions
@@ -1615,7 +1667,10 @@ fieldset {
 }
 /* desktop */
 @media only screen and (min-width: 1225px) {
-  body {
+  body,
+  button,
+  input[type="button"],
+  input[type="submit"] {
     font-size: 22px;
     line-height: 34px;
   }

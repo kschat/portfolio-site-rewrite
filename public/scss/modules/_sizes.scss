@@ -58,3 +58,10 @@ $headerZIndex: 100;
 $leftNavZIndex: 99;
 $panelZIndex: 97;
 $panelOverlayZIndex: 98;
+
+// Media queries
+$extra-small: "only screen and (max-width: 767px)";
+$small: "only screen and (max-width: 767px) and (orientation: landscape)";
+$medium: "only screen and (min-width: 768px)";
+$large: "only screen and (min-width: 1225px)";
+$extra-large: "only screen and (min-width: 1500px)";

@@ -3,7 +3,7 @@
 var hbs = require('express-handlebars').create();
 
 exports.init = function init(app) {
-  app.get('/:page', function(req, res, next) {
+  app.get('/:page?', function(req, res, next) {
     var view = req.params.page || 'about';
 
     if(!req.xhr) { return res.render(view); }
