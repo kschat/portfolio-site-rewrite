@@ -1,0 +1,21 @@
+/* _loadingBar.scss */
+
+.loading-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: $headerZIndex + 1;
+
+  width: 0%;
+  height: 3px;
+
+  background-color: $primaryColor;
+
+  @include transition(width 0.8s ease);
+}
+
+@media #{$mq-medium} {
+  .loading-bar {
+    height: 2px;
+  }
+}

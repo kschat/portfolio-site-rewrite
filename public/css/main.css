@@ -55,21 +55,6 @@ section[role='main'] {
   overflow: hidden;
 }
 
-.loading-bar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 101;
-  width: 0%;
-  height: 3px;
-  background-color: #c64a49;
-  -webkit-transition: width 0.8s ease;
-  -moz-transition: width 0.8s ease;
-  -ms-transition: width 0.8s ease;
-  -o-transition: width 0.8s ease;
-  transition: width 0.8s ease;
-}
-
 .list {
   list-style-type: none;
   padding-left: 0;
@@ -992,6 +977,27 @@ ul.nav.vertical li a {
     line-height: 54px;
   }
 }
+/* _loadingBar.scss */
+.loading-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 101;
+  width: 0%;
+  height: 3px;
+  background-color: #c64a49;
+  -webkit-transition: width 0.8s ease;
+  -moz-transition: width 0.8s ease;
+  -ms-transition: width 0.8s ease;
+  -o-transition: width 0.8s ease;
+  transition: width 0.8s ease;
+}
+
+@media only screen and (min-width: 768px) {
+  .loading-bar {
+    height: 2px;
+  }
+}
 /*! normalize.css v1.1.1 | MIT License | git.io/normalize */
 /* ==========================================================================
    HTML5 display definitions
@@ -1659,10 +1665,6 @@ fieldset {
   ul.nav li a, ul.nav li a:link, ul.nav li a:visited {
     line-height: 48px;
     padding: 0 14px;
-  }
-
-  .loading-bar {
-    height: 2px;
   }
 
   .search-results-overlay .search-overlay-header h2 {

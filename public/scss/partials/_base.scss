@@ -37,20 +37,6 @@ section[role='main'] {
 	overflow: hidden;
 }
 
-.loading-bar {
-	position: fixed;
-	top: 0;
-	left: 0;
-	z-index: $headerZIndex + 1;
-
-	width: 0%;
-	height: 3px;
-
-	background-color: $primaryColor;
-
-	@include transition(width 0.8s ease);
-}
-
 .list {
 	list-style-type: none;
 	padding-left: 0;
