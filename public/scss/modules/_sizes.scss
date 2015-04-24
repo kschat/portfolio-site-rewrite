@@ -60,8 +60,8 @@ $panelZIndex: 97;
 $panelOverlayZIndex: 98;
 
 // Media queries
-$extra-small: "only screen and (max-width: 767px)";
-$small: "only screen and (max-width: 767px) and (orientation: landscape)";
-$medium: "only screen and (min-width: 768px)";
-$large: "only screen and (min-width: 1225px)";
-$extra-large: "only screen and (min-width: 1500px)";
+$mq-extra-small: "only screen and (max-width: 767px)";
+$mq-small: "only screen and (max-width: 767px) and (orientation: landscape)";
+$mq-medium: "only screen and (min-width: 768px)";
+$mq-large: "only screen and (min-width: 1225px)";
+$mq-extra-large: "only screen and (min-width: 1500px)";

@@ -31,64 +31,6 @@ section[role='main'] {
   background-color: #fff;
 }
 
-#background-canvas {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-
-.panel {
-  position: relative;
-  z-index: 97;
-  width: 100%;
-  height: 100%;
-  float: right;
-  padding-top: 10px;
-  background-color: #fff;
-  -webkit-transition: padding-top 0.8s ease;
-  -moz-transition: padding-top 0.8s ease;
-  -ms-transition: padding-top 0.8s ease;
-  -o-transition: padding-top 0.8s ease;
-  transition: padding-top 0.8s ease;
-}
-.panel .panel-header {
-  width: 100%;
-  color: #909090;
-  background-color: #fff;
-  font-size: 30px;
-  line-height: 32px;
-  padding: 2px 24px;
-  -webkit-transition: font-size 0.8s ease;
-  -moz-transition: font-size 0.8s ease;
-  -ms-transition: font-size 0.8s ease;
-  -o-transition: font-size 0.8s ease;
-  transition: font-size 0.8s ease;
-}
-.panel .panel-body {
-  width: 100%;
-  padding: 8px 24px;
-  background-color: #fff;
-  -webkit-transition: font-size 0.8s ease;
-  -moz-transition: font-size 0.8s ease;
-  -ms-transition: font-size 0.8s ease;
-  -o-transition: font-size 0.8s ease;
-  transition: font-size 0.8s ease;
-}
-
-.panel-overlay {
-  display: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 98;
-  height: 100%;
-  width: 100%;
-  background-color: #555;
-  zoom: 1;
-  filter: alpha(opacity=80);
-  opacity: 0.8;
-}
-
 .pull-right {
   float: right;
   display: block;
@@ -983,6 +925,73 @@ ul.nav.vertical li a {
     margin-bottom: 0;
   }
 }
+/* _panel.scss */
+.panel {
+  position: relative;
+  z-index: 97;
+  width: 100%;
+  height: 100%;
+  float: right;
+  padding-top: 10px;
+  background-color: #fff;
+  -webkit-transition: padding-top 0.8s ease;
+  -moz-transition: padding-top 0.8s ease;
+  -ms-transition: padding-top 0.8s ease;
+  -o-transition: padding-top 0.8s ease;
+  transition: padding-top 0.8s ease;
+}
+.panel .panel-header {
+  width: 100%;
+  color: #909090;
+  background-color: #fff;
+  font-size: 30px;
+  line-height: 32px;
+  padding: 2px 24px;
+  -webkit-transition: font-size 0.8s ease;
+  -moz-transition: font-size 0.8s ease;
+  -ms-transition: font-size 0.8s ease;
+  -o-transition: font-size 0.8s ease;
+  transition: font-size 0.8s ease;
+}
+.panel .panel-body {
+  width: 100%;
+  padding: 8px 24px;
+  background-color: #fff;
+  -webkit-transition: font-size 0.8s ease;
+  -moz-transition: font-size 0.8s ease;
+  -ms-transition: font-size 0.8s ease;
+  -o-transition: font-size 0.8s ease;
+  transition: font-size 0.8s ease;
+}
+
+.panel-overlay {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 98;
+  height: 100%;
+  width: 100%;
+  background-color: #555;
+  zoom: 1;
+  filter: alpha(opacity=80);
+  opacity: 0.8;
+}
+
+@media only screen and (min-width: 768px) {
+  .panel {
+    min-width: 610px;
+  }
+}
+@media only screen and (min-width: 1500px) {
+  .panel {
+    padding-top: 30px;
+  }
+  .panel .panel-header {
+    font-size: 50px;
+    line-height: 54px;
+  }
+}
 /*! normalize.css v1.1.1 | MIT License | git.io/normalize */
 /* ==========================================================================
    HTML5 display definitions
@@ -1652,10 +1661,6 @@ fieldset {
     padding: 0 14px;
   }
 
-  .panel {
-    min-width: 610px;
-  }
-
   .loading-bar {
     height: 2px;
   }
@@ -1693,14 +1698,6 @@ fieldset {
 
   ul.nav.vertical {
     margin-top: 20px;
-  }
-
-  .panel {
-    padding-top: 30px;
-  }
-  .panel .panel-header {
-    font-size: 50px;
-    line-height: 54px;
   }
 }
 /* large desktops */

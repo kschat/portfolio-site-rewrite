@@ -143,10 +143,6 @@
     }
   }
 
-  .panel {
-    min-width: 610px;
-  }
-
   .loading-bar {
     height: 2px;
   }
@@ -185,15 +181,6 @@
 
   ul.nav.vertical {
     margin-top: 20px;
-  }
-
-  .panel {
-    padding-top: $desktopPanelTopPadding;
-
-    & .panel-header {
-      font-size: $desktopPanelHeaderFontSize;
-      line-height: $desktopPanelHeaderLineHeight;
-    }
   }
 }
 

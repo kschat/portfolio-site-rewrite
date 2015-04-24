@@ -25,60 +25,6 @@ section[role='main'] {
 	background-color: $backgroundColor;
 }
 
-#background-canvas {
-	display: block;
-	width: 100%;
-	height: 100%;
-}
-
-.panel {
-	position: relative;
-	z-index: $panelZIndex;
-
-	width: 100%;
-	height: 100%;
-	float: right;
-
-	padding-top: $mobilePanelTopPadding;
-
-	background-color: $backgroundColor;
-	@include transition(padding-top 0.8s ease);
-
-	& .panel-header {
-		width: 100%;
-		color: $textColor;
-		background-color: $backgroundColor;
-
-		font-size: $mobilePanelHeaderFontSize;
-		line-height: $mobilePanelHeaderLineHeight;
-
-		padding: 2px 24px;
-
-		@include transition(font-size 0.8s ease);
-	}
-
-	& .panel-body {
-		width: 100%;
-		padding: 8px 24px;
-		background-color: $backgroundColor;
-
-		@include transition(font-size 0.8s ease);
-	}
-}
-
-.panel-overlay {
-	display: none;
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: $panelOverlayZIndex;
-	height: 100%;
-	width: 100%;
-
-	background-color: #555;
-	@include transparency(.8);
-}
-
 .pull-right {
 	@include pull-right;
 }
