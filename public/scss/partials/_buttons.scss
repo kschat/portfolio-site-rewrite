@@ -7,10 +7,10 @@
   margin-bottom: 6px;
   border-radius: 6px;
 
-  background-color: $white;
-  color: $blackLighter;
+  background-color: $buttonBackgroundColor;
+  color: $buttonColor;
 
-  border: 1px solid $gray;
+  border: 1px solid $buttonBorderColor;
 
   @include transition(background-color 0.3s ease, border-color 0.3s ease);
 
@@ -22,27 +22,27 @@
   }
 
   &:hover {
-    background-color: darken($white, 10%);
-    border: 1px solid $grayDark;
+    background-color: $buttonHoverBackgroundColor;
+    border: 1px solid $buttonHoverBorderColor;
   }
 
   &:active {
     @include transition(none);
-    background-color: $gray;
+    background-color: $buttonActiveBackgroundColor;
   }
 
   &.btn-primary {
-    background-color: $cyan;
-    color: $white;
-    border-color: darken($cyan, 10%);
+    background-color: $primaryColor;
+    color: $altTextColor;
+    border-color: $primaryDarkColor;
 
     &:hover {
-      background-color: darken($cyan, 10%);
+      background-color: $primaryDarkColor;
     }
 
     &:active {
-      background-color: $cyan;
-      color: $white;
+      background-color: $primaryColor;
+      color: $altTextColor;
     }
   }
 }

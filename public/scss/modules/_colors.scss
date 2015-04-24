@@ -1,5 +1,6 @@
 /* _colors.scss */
 
+// Color scale
 $black: #000;
 $blackLight: lighten($black, 10%);
 $blackLighter: lighten($black, 20%);
@@ -11,17 +12,31 @@ $grayLight: lighten($gray, 10%);
 $grayLighter: lighten($gray, 20%);
 
 $white: #fff;
+$whiteDarker: darken($white, 20%);
+$whiteDark: darken($white, 10%);
 
 $blue: #428bca;
 $green: #5cb85c;
-$red: #d43f3a;
 $yellow: #f0ad4e;
-$cyan: #c64a49;
+$red: #c64a49;
 
-$primaryColor: #2580a2;
-$backgroundColor: #ecebe8;
+// Site colors
+$primaryColor: $red;
+$primaryDarkColor: darken($primaryColor, 10%);
+$backgroundColor: $white;
+$contrastColor: #ecebe8;
+$textColor: #909090;
+$altTextColor: $white;
 $linkColor: $primaryColor;
+
 $headerBackgroundColor: $blackLighter;
 $headerColor: $white;
-$headerFontColor: #909090;
-$baseFontColor: #909090;
+
+$buttonBackgroundColor: $white;
+$buttonColor: $blackLighter;
+$buttonBorderColor: $gray;
+
+$buttonHoverBackgroundColor: $whiteDark;
+$buttonHoverBorderColor: $grayDark;
+
+$buttonActiveBackgroundColor: $gray;

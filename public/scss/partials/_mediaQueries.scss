@@ -54,12 +54,12 @@
     }
   }
 
-    .side-nav {
+  .side-nav {
     top: $desktopHeaderHeight;
     min-width: $desktopLeftNavMinWidth;
     width: $desktopLeftNavWidth;
 
-    background-color: $backgroundColor;
+    background-color: $contrastColor;
     border-right: 1px solid $gray;
 
     @include box-shadow(0);
@@ -81,8 +81,8 @@
     & .nav a:link,
     & .nav a:visited {
       font-size: $desktopLeftNavFontSize;
-      background-color: $backgroundColor;
-      color: $cyan;
+      background-color: $contrastColor;
+      color: $linkColor;
 
       &.selected-link {
         color: $white;
@@ -100,7 +100,7 @@
       width: 0%;
       height: 100%;
 
-      background-color: $cyan;
+      background-color: $linkColor;
       border-right: 0;
     }
 
@@ -128,7 +128,7 @@
         display: inline;
       }
     }
-    }
+  }
 
   .side-nav-content {
     padding-top: 10px;

@@ -56,8 +56,8 @@
 	}
 
 	& a:hover {
-		color: $cyan;
-		border-bottom: 3px solid $cyan;
+		color: $linkColor;
+		border-bottom: 3px solid $linkColor;
 		text-decoration: none;
 		@include transition(color 0.8s ease, border-bottom 0.8s ease);
 	}
@@ -105,7 +105,7 @@ ul.nav.vertical {
 	top: $mobileHeaderHeight;
 	z-index: $leftNavZIndex;
 
-	background-color: $cyan;
+	background-color: $primaryColor;
 
 	@include box-shadow(inset -7px, 7px, 14px, -7px, #444);
 
@@ -133,7 +133,7 @@ ul.nav.vertical {
 		@include transition(color 0.8s ease);
 	}
 
-	& .nav a:hover, 
+	& .nav a:hover,
 	& .nav a:active {
 		text-decoration: none;
 	}
@@ -148,7 +148,7 @@ ul.nav.vertical {
 		top: $mobileArrowTopSize;
 		width: 0;
 		height: 0;
-		
+
 		@include triangle($mobileArrowSize, $white);
 		border-right: 0px solid $white;
 
@@ -254,7 +254,7 @@ ul.nav.vertical {
 
 		& a:hover,
 		& a:active {
-			color: $cyan;
+			color: $linkColor;
 			text-decoration: none;
 			@include transition(color 0.8s ease);
 		}
@@ -285,7 +285,7 @@ ul.nav.vertical {
 
 	& a:hover,
 	& a:active {
-		color: $cyan;
+		color: $linkColor;
 		text-decoration: none;
 		@include transition(color 0.8s ease);
 	}
@@ -340,7 +340,7 @@ ul.nav.vertical {
 
 			& a:hover,
 			& a:active {
-				background-color: $cyan;
+				background-color: $linkColor;
 				text-decoration: none;
 				@include transition(background-color 0.8s ease);
 			}
@@ -363,7 +363,7 @@ ul.nav.vertical {
 
 			& a:hover,
 			& a:active {
-				color: $cyan;
+				color: $linkColor;
 				text-decoration: none;
 				@include transition(color 0.8s ease);
 			}
