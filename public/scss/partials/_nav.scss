@@ -390,3 +390,150 @@ ul.nav.vertical {
 		@include transparency(0);
 	}
 }
+
+@media #{$mq-small-landscape} {
+  .side-nav {
+    & .nav i {
+      font-size: $mobileLandscapeLeftNavIconSize;
+      }
+
+      & .nav a {
+        line-height: $mobileLandscapeLeftNavLineHeight !important;
+      }
+
+    & a::before {
+      top: $mobileLandscapeArrowTopSize;
+      @include triangle($mobileLandscapeArrowSize, $white);
+      border-right: 0px solid $white;
+    }
+
+    & a.selected-link::before {
+      display: block;
+      border-right: $mobileArrowSize solid $white;
+    }
+  }
+}
+
+@media #{$mq-medium} {
+	.navbar {
+    height: $desktopHeaderHeight;
+    font-size: $desktopHeaderFontSize;
+    line-height: $desktopHeaderLineHeight;
+
+    & .navbar-content {
+      height: $desktopHeaderHeight;
+    }
+  }
+
+  .navbar .search {
+    & .search-box {
+      height: $desktopHeaderHeight;
+      @include transition(height 0.8s ease 0.5s, width 1s ease, border-color 0.8s ease);
+    }
+  }
+
+  .side-nav {
+    top: $desktopHeaderHeight;
+    min-width: $desktopLeftNavMinWidth;
+    width: $desktopLeftNavWidth;
+
+    background-color: $contrastColor;
+    border-right: 1px solid $gray;
+
+    @include box-shadow(0);
+
+    & .nav li {
+      text-shadow: none;
+      border-top: 1px solid $gray;
+    }
+
+    & .nav {
+      border-bottom: 1px solid $gray;
+    }
+
+    & .nav i {
+      display: none;
+    }
+
+    & .nav a,
+    & .nav a:link,
+    & .nav a:visited {
+      font-size: $desktopLeftNavFontSize;
+      background-color: $contrastColor;
+      color: $linkColor;
+
+      &.selected-link {
+        color: $white;
+      }
+    }
+
+    & .nav a:hover::before {
+      width: 8px;
+    }
+
+    & a::before {
+      top: 0;
+      left: 0;
+
+      width: 0%;
+      height: 100%;
+
+      background-color: $linkColor;
+      border-right: 0;
+    }
+
+    & .nav a.selected-link::before {
+      border-right: 0;
+      width: 100%;
+    }
+
+    & .thumb {
+      width: 125px;
+      height: 125px;
+      @include border-radius(60px);
+      background-size: 125px;
+      @include transparency(1);
+      @include transition(opacity 0.8s ease 0.6s);
+    }
+
+    .footer {
+      color: $grayDark;
+      font-size: 14px;
+      line-height: 20px;
+
+      & .name {
+        display: inline;
+      }
+    }
+  }
+
+  .side-nav-content {
+    padding-top: 10px;
+  }
+
+  ul.nav li {
+    & a,
+    & a:link,
+    & a:visited {
+      line-height: $desktopHeaderLineHeight;
+      padding: $desktopSocialLinkPadding;
+    }
+  }
+}
+
+@media #{$mq-large} {
+  .side-nav {
+    max-width: $desktopLeftNavMaxWidth;
+
+    & .thumb {
+      width: 200px;
+      height: 200px;
+      @include border-radius(100px);
+      background-size: 200px;
+    }
+  }
+
+  ul.nav.vertical {
+    margin-top: 20px;
+  }
+}

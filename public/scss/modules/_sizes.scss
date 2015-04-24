@@ -60,8 +60,8 @@ $panelZIndex: 97;
 $panelOverlayZIndex: 98;
 
 // Media queries
-$mq-extra-small: "only screen and (max-width: 767px)";
-$mq-small: "only screen and (max-width: 767px) and (orientation: landscape)";
+$mq-small: "only screen and (max-width: 767px)";
+$mq-small-landscape: "only screen and (max-width: 767px) and (orientation: landscape)";
 $mq-medium: "only screen and (min-width: 768px)";
 $mq-large: "only screen and (min-width: 1225px)";
 $mq-extra-large: "only screen and (min-width: 1500px)";

@@ -859,6 +859,144 @@ ul.nav.vertical li a {
   opacity: 0;
 }
 
+@media only screen and (max-width: 767px) and (orientation: landscape) {
+  .side-nav .nav i {
+    font-size: 20px;
+  }
+  .side-nav .nav a {
+    line-height: 28px !important;
+  }
+  .side-nav a::before {
+    top: 2px;
+    border-right: 6px solid #fff;
+    border-bottom: 6px solid transparent;
+    border-top: 6px solid transparent;
+    border-right: 0px solid #fff;
+  }
+  .side-nav a.selected-link::before {
+    display: block;
+    border-right: 8px solid #fff;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .navbar {
+    height: 48px;
+    font-size: 22px;
+    line-height: 48px;
+  }
+  .navbar .navbar-content {
+    height: 48px;
+  }
+
+  .navbar .search .search-box {
+    height: 48px;
+    -webkit-transition: height 0.8s ease 0.5s, width 1s ease, border-color 0.8s ease;
+    -moz-transition: height 0.8s ease 0.5s, width 1s ease, border-color 0.8s ease;
+    -ms-transition: height 0.8s ease 0.5s, width 1s ease, border-color 0.8s ease;
+    -o-transition: height 0.8s ease 0.5s, width 1s ease, border-color 0.8s ease;
+    transition: height 0.8s ease 0.5s, width 1s ease, border-color 0.8s ease;
+  }
+
+  .side-nav {
+    top: 48px;
+    min-width: 170px;
+    width: 20%;
+    background-color: #ecebe8;
+    border-right: 1px solid #c5c5c5;
+    -moz-box-shadow: 0 0 0 0 #fff;
+    -webkit-box-shadow: 0 0 0 0 #fff;
+    box-shadow: 0 0 0 0 #fff;
+  }
+  .side-nav .nav li {
+    text-shadow: none;
+    border-top: 1px solid #c5c5c5;
+  }
+  .side-nav .nav {
+    border-bottom: 1px solid #c5c5c5;
+  }
+  .side-nav .nav i {
+    display: none;
+  }
+  .side-nav .nav a, .side-nav .nav a:link, .side-nav .nav a:visited {
+    font-size: 18px;
+    background-color: #ecebe8;
+    color: #c64a49;
+  }
+  .side-nav .nav a.selected-link, .side-nav .nav a:link.selected-link, .side-nav .nav a:visited.selected-link {
+    color: #fff;
+  }
+  .side-nav .nav a:hover::before {
+    width: 8px;
+  }
+  .side-nav a::before {
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: #c64a49;
+    border-right: 0;
+  }
+  .side-nav .nav a.selected-link::before {
+    border-right: 0;
+    width: 100%;
+  }
+  .side-nav .thumb {
+    width: 125px;
+    height: 125px;
+    -webkit-border-radius: 60px 60px 60px 60px;
+    /* Safari 3-4, iOS 1-3.2, Android 1.6- */
+    -moz-border-radius: 60px 60px 60px 60px;
+    /* Firefox 1-3.6 */
+    border-radius: 60px 60px 60px 60px;
+    /* Opera 10.5, IE 9, Safari 5, Chrome, Firefox 4, iOS 4, Android 2.1+ */
+    background-size: 125px;
+    zoom: 1;
+    filter: alpha(opacity=100);
+    opacity: 1;
+    -webkit-transition: opacity 0.8s ease 0.6s;
+    -moz-transition: opacity 0.8s ease 0.6s;
+    -ms-transition: opacity 0.8s ease 0.6s;
+    -o-transition: opacity 0.8s ease 0.6s;
+    transition: opacity 0.8s ease 0.6s;
+  }
+  .side-nav .footer {
+    color: #acacac;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .side-nav .footer .name {
+    display: inline;
+  }
+
+  .side-nav-content {
+    padding-top: 10px;
+  }
+
+  ul.nav li a, ul.nav li a:link, ul.nav li a:visited {
+    line-height: 48px;
+    padding: 0 14px;
+  }
+}
+@media only screen and (min-width: 1225px) {
+  .side-nav {
+    max-width: 300px;
+  }
+  .side-nav .thumb {
+    width: 200px;
+    height: 200px;
+    -webkit-border-radius: 100px 100px 100px 100px;
+    /* Safari 3-4, iOS 1-3.2, Android 1.6- */
+    -moz-border-radius: 100px 100px 100px 100px;
+    /* Firefox 1-3.6 */
+    border-radius: 100px 100px 100px 100px;
+    /* Opera 10.5, IE 9, Safari 5, Chrome, Firefox 4, iOS 4, Android 2.1+ */
+    background-size: 200px;
+  }
+
+  ul.nav.vertical {
+    margin-top: 20px;
+  }
+}
 /* _typography.scss */
 /* _button.scss */
 .btn {
@@ -968,13 +1106,20 @@ ul.nav.vertical li a {
     min-width: 610px;
   }
 }
-@media only screen and (min-width: 1500px) {
+@media only screen and (min-width: 1225px) {
   .panel {
     padding-top: 30px;
   }
   .panel .panel-header {
     font-size: 50px;
     line-height: 54px;
+  }
+}
+@media only screen and (min-width: 1500px) {
+  .panel {
+    max-width: 1250px;
+    margin: 0 auto;
+    float: none;
   }
 }
 /* _loadingBar.scss */
@@ -1538,133 +1683,11 @@ fieldset {
 }
 
 /* _mediaQueries.scss */
-@media only screen and (max-width: 767px) {
-  /* phones */
-}
-@media only screen and (max-width: 767px) and (orientation: landscape) {
-  /* portrait phones */
-  .side-nav .nav i {
-    font-size: 20px;
-  }
-  .side-nav .nav a {
-    line-height: 28px !important;
-  }
-  .side-nav a::before {
-    top: 2px;
-    border-right: 6px solid #fff;
-    border-bottom: 6px solid transparent;
-    border-top: 6px solid transparent;
-    border-right: 0px solid #fff;
-  }
-  .side-nav a.selected-link::before {
-    display: block;
-    border-right: 8px solid #fff;
-  }
-}
 /* tablets */
 @media only screen and (min-width: 768px) {
   section[role='main'] {
     padding-top: 48px;
     padding-left: 20%;
-  }
-
-  .navbar {
-    height: 48px;
-    font-size: 22px;
-    line-height: 48px;
-  }
-  .navbar .navbar-content {
-    height: 48px;
-  }
-
-  .navbar .search .search-box {
-    height: 48px;
-    -webkit-transition: height 0.8s ease 0.5s, width 1s ease, border-color 0.8s ease;
-    -moz-transition: height 0.8s ease 0.5s, width 1s ease, border-color 0.8s ease;
-    -ms-transition: height 0.8s ease 0.5s, width 1s ease, border-color 0.8s ease;
-    -o-transition: height 0.8s ease 0.5s, width 1s ease, border-color 0.8s ease;
-    transition: height 0.8s ease 0.5s, width 1s ease, border-color 0.8s ease;
-  }
-
-  .side-nav {
-    top: 48px;
-    min-width: 170px;
-    width: 20%;
-    background-color: #ecebe8;
-    border-right: 1px solid #c5c5c5;
-    -moz-box-shadow: 0 0 0 0 #fff;
-    -webkit-box-shadow: 0 0 0 0 #fff;
-    box-shadow: 0 0 0 0 #fff;
-  }
-  .side-nav .nav li {
-    text-shadow: none;
-    border-top: 1px solid #c5c5c5;
-  }
-  .side-nav .nav {
-    border-bottom: 1px solid #c5c5c5;
-  }
-  .side-nav .nav i {
-    display: none;
-  }
-  .side-nav .nav a, .side-nav .nav a:link, .side-nav .nav a:visited {
-    font-size: 18px;
-    background-color: #ecebe8;
-    color: #c64a49;
-  }
-  .side-nav .nav a.selected-link, .side-nav .nav a:link.selected-link, .side-nav .nav a:visited.selected-link {
-    color: #fff;
-  }
-  .side-nav .nav a:hover::before {
-    width: 8px;
-  }
-  .side-nav a::before {
-    top: 0;
-    left: 0;
-    width: 0%;
-    height: 100%;
-    background-color: #c64a49;
-    border-right: 0;
-  }
-  .side-nav .nav a.selected-link::before {
-    border-right: 0;
-    width: 100%;
-  }
-  .side-nav .thumb {
-    width: 125px;
-    height: 125px;
-    -webkit-border-radius: 60px 60px 60px 60px;
-    /* Safari 3-4, iOS 1-3.2, Android 1.6- */
-    -moz-border-radius: 60px 60px 60px 60px;
-    /* Firefox 1-3.6 */
-    border-radius: 60px 60px 60px 60px;
-    /* Opera 10.5, IE 9, Safari 5, Chrome, Firefox 4, iOS 4, Android 2.1+ */
-    background-size: 125px;
-    background: url("../images/danandi-tablet.jpg");
-    zoom: 1;
-    filter: alpha(opacity=100);
-    opacity: 1;
-    -webkit-transition: opacity 0.8s ease 0.6s;
-    -moz-transition: opacity 0.8s ease 0.6s;
-    -ms-transition: opacity 0.8s ease 0.6s;
-    -o-transition: opacity 0.8s ease 0.6s;
-    transition: opacity 0.8s ease 0.6s;
-  }
-  .side-nav .footer {
-    color: #acacac;
-    font-size: 14px;
-    line-height: 20px;
-  }
-  .side-nav .footer .name {
-    display: inline;
-  }
-
-  .side-nav-content {
-    padding-top: 10px;
-  }
-
-  ul.nav li a, ul.nav li a:link, ul.nav li a:visited {
-    line-height: 48px;
-    padding: 0 14px;
   }
 
   .search-results-overlay .search-overlay-header h2 {
@@ -1681,37 +1704,11 @@ fieldset {
     font-size: 22px;
     line-height: 34px;
   }
-
-  .side-nav {
-    max-width: 300px;
-  }
-  .side-nav .thumb {
-    width: 200px;
-    height: 200px;
-    -webkit-border-radius: 100px 100px 100px 100px;
-    /* Safari 3-4, iOS 1-3.2, Android 1.6- */
-    -moz-border-radius: 100px 100px 100px 100px;
-    /* Firefox 1-3.6 */
-    border-radius: 100px 100px 100px 100px;
-    /* Opera 10.5, IE 9, Safari 5, Chrome, Firefox 4, iOS 4, Android 2.1+ */
-    background-size: 200px;
-    background: url("../images/danandi-desktop.jpg");
-  }
-
-  ul.nav.vertical {
-    margin-top: 20px;
-  }
 }
 /* large desktops */
 @media only screen and (min-width: 1500px) {
   section[role='main'] {
     padding-left: 300px;
-  }
-
-  .panel {
-    max-width: 1250px;
-    margin: 0 auto;
-    float: none;
   }
 }
 /* FONT PATH

@@ -54,7 +54,7 @@
   }
 }
 
-@media #{$mq-extra-large} {
+@media #{$mq-large} {
   .panel {
     padding-top: $desktopPanelTopPadding;
 
@@ -62,5 +62,14 @@
       font-size: $desktopPanelHeaderFontSize;
       line-height: $desktopPanelHeaderLineHeight;
     }
+  }
+
+}
+
+@media #{$mq-extra-large} {
+  .panel {
+    max-width: 1250px;
+    margin: 0 auto;
+    float: none;
   }
 }
