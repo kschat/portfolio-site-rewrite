@@ -35,12 +35,16 @@ exports = module.exports = Backbone.View.extend({
 	showSearchForm: function(e) {
 		e.preventDefault();
 		
+		this.vent.trigger('search:active');
+
 		this.$el.addClass('search-active')
 			.find('.search-box')
 			.focus();
 	},
 
 	hideSearchForm: function(e) {
+		this.vent.trigger('search:inactive');
+
 		this.$el.removeClass('search-active');
 	},
 
@@ -48,7 +52,7 @@ exports = module.exports = Backbone.View.extend({
 		clearTimeout(this.searchTimeout);
 		this.searchTimeout = setTimeout((function() { 
 			this.vent.trigger('search:send', { query: $(e.target).val().trim() });
-		}).bind(this), 3000);
+		}).bind(this), 2000);
 	},
 
 	makeSearchRequest: function(args) {

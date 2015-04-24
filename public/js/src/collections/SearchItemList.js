@@ -6,6 +6,7 @@ var _ = require('underscore'),
 
 exports = module.exports = Backbone.Collection.extend({
 	model: SearchItem,
+	query: '',
 	url: function() {
 		return '/api/search?q=' + this.query;
 	}

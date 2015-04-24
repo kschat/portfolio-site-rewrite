@@ -27,14 +27,16 @@
 .navbar {
 	@extend %generic-navbar;
 	position: fixed;
-	//left: $mobileLeftNavWidth;
+
+	@include transition(height 0.8s ease, font-size 0.8s ease);
 
 	& .navbar-content {
 		@extend %generic-navbar-content;
 
 		background-color: $headerBackgroundColor;
 		color: $headerColor;
-		//@include box-shadow(0px, 1px, 14px, 4px, #ccc);
+
+		@include transition(height 0.8s ease);
 	}
 
 	& .brand {
@@ -50,23 +52,25 @@
 		display: block;
 		color: $headerColor;
 		border-bottom: 1px solid transparent;
-		@include transition(color 0.8s ease, border 0.8s ease);
+		@include transition(color 0.8s ease, border-bottom 0.8s ease);
 	}
 
 	& a:hover {
 		color: $cyan;
 		border-bottom: 3px solid $cyan;
-		@include transition(color 0.8s ease, border 0.8s ease);
+		text-decoration: none;
+		@include transition(color 0.8s ease, border-bottom 0.8s ease);
 	}
 }
 
 ul.nav {
 	@extend %generic-nav;
 	position: relative;
-	font-size: $mobileHeaderFontSize;
+	//font-size: $mobileHeaderFontSize;
 
 	& li {
 		display: inline-block;
+		overflow: hidden;
 		height: 100%;
 
 		& a,
@@ -76,6 +80,8 @@ ul.nav {
 			padding: $mobileSocialLinkPadding;
 			height: 100%;
 			width: 100%;
+
+			@include transition(padding 0.8s ease, color 0.8s ease, border-bottom 0.8s ease);
 		}
 	}
 }
@@ -99,23 +105,18 @@ ul.nav.vertical {
 	top: $mobileHeaderHeight;
 	z-index: $leftNavZIndex;
 
-	//background-color: $grayLighter; media query
 	background-color: $cyan;
 
-	//border-right: 1px solid $grayLight; media query
 	@include box-shadow(inset -7px, 7px, 14px, -7px, #444);
 
 	width: $mobileLeftNavWidth;
 	height: 100%;
 
+	@include transition(width 0.8s ease, min-width 0.8s ease);
+
 	& .nav li {
 		text-shadow: 0 0 6px #444;
 		position: relative;
-		//border-top: 1px solid $grayLight; media query
-	}
-
-	& .nav {
-		//border-bottom: 1px solid $grayLight; media query
 	}
 
 	& .nav i {
@@ -132,12 +133,9 @@ ul.nav.vertical {
 		@include transition(color 0.8s ease);
 	}
 
-	& .nav a:hover::before {
-		color: $white;
-	}
-
-	& .nav a:hover::before {
-		width: 8px;
+	& .nav a:hover, 
+	& .nav a:active {
+		text-decoration: none;
 	}
 
 	& a span {
@@ -146,40 +144,53 @@ ul.nav.vertical {
 
 	& a::before {
 		position: absolute;
-		//left: 0; media query
 		right: 0;
-		top: 8px;
-		//width: 0%; media query
+		top: $mobileArrowTopSize;
 		width: 0;
 		height: 0;
 		
-		@include triangle(10px, $white);
+		@include triangle($mobileArrowSize, $white);
 		border-right: 0px solid $white;
 
-		//background-color: $cyan; media query
 		content: "";
 		@include transition(width 0.8s ease, border-right 0.8s ease);
 	}
 
 	& a.selected-link::before {
 		display: block;
-		border-right: 10px solid $white;
+		border-right: $mobileArrowSize solid $white;
+	}
+
+	& .thumb {
+		display: block;
+		margin: 0 auto;
+		width: 0;
+		height: 0;
+
+		@include transparency(0);
+	}
+
+	& .footer {
+		position: absolute;
+		z-index: -1;
+
+		bottom: 50px;
+		width: 100%;
+
+		color: $white;
+		font-size: 10px;
+		line-height: 14px;
+		text-align: center;
+
+		& .name {
+			display: none;
+		}
 	}
 }
 
 .side-nav-content {
-	//padding-top: 10px; media query
 	text-align: center;
-}
-
-.thumb {
-	width: 125px;
-	height: 125px;
-	@include border-radius(60px);
-}
-
-.side-nav .thumb {
-	display: none;
+	z-index: 20;
 }
 
 .navbar form {
@@ -203,6 +214,7 @@ ul.nav.vertical {
 	width: 100%;
 
 	& .search-box {
+		visibility: hidden;
 		width: 0;
 		height: $mobileHeaderHeight;
 		border: 0;
@@ -216,6 +228,7 @@ ul.nav.vertical {
 	}
 
 	&.search-active .search-box {
+		visibility: visible;
 		width: 100%;
 		border: 1px solid $white;
 		@include transition(width 1s ease, border-color 0.8s ease);
@@ -234,6 +247,7 @@ ul.nav.vertical {
 			z-index: 100;
 			padding: 0 12px;
 			margin-left: -6px;
+			border-bottom: none;
 
 			@include transition(color 0.8s ease);
 		}
@@ -241,8 +255,8 @@ ul.nav.vertical {
 		& a:hover,
 		& a:active {
 			color: $cyan;
-			border-bottom: 1px solid $cyan;
-			@include transition(color 0.8s ease, border 0.8s ease);
+			text-decoration: none;
+			@include transition(color 0.8s ease);
 		}
 	}
 }
@@ -255,15 +269,10 @@ ul.nav.vertical {
 	width: 100%;
 	min-width: 100%;
 
-	height: 100%;
-	min-height: 100%;
-
 	background-color: $blackLight;
 	color: $grayLight;
 
 	font-size: 18px;
-
-	@include transparency(0.95);
 
 	& a,
 	& a:link,
@@ -277,6 +286,7 @@ ul.nav.vertical {
 	& a:hover,
 	& a:active {
 		color: $cyan;
+		text-decoration: none;
 		@include transition(color 0.8s ease);
 	}
 
@@ -294,6 +304,11 @@ ul.nav.vertical {
 	& .search-overlay-header {
 		width: 100%;
 		text-align: center;
+
+		h2 {
+			font-size: $mobilePanelHeaderFontSize;
+			line-height: $mobilePanelHeaderLineHeight;
+		}
 	}
 
 	& .search-overlay-close {
@@ -326,6 +341,7 @@ ul.nav.vertical {
 			& a:hover,
 			& a:active {
 				background-color: $cyan;
+				text-decoration: none;
 				@include transition(background-color 0.8s ease);
 			}
 		}
@@ -348,7 +364,7 @@ ul.nav.vertical {
 			& a:hover,
 			& a:active {
 				color: $cyan;
-
+				text-decoration: none;
 				@include transition(color 0.8s ease);
 			}
 		}
@@ -357,5 +373,20 @@ ul.nav.vertical {
 			margin: 8px 0;
 			padding-left: 10px;
 		}
+	}
+
+	&.fade.in {
+		visibility: visible;
+		@include transparency(1);
+		@include transition-delay(0);
+
+		&.overlay {
+			@include transparency(0.95);
+		}
+	}
+
+	&.fade.out {
+		visibility: hidden;
+		@include transparency(0);
 	}
 }

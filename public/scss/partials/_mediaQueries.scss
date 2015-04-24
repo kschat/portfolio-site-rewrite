@@ -1,13 +1,208 @@
 /* _mediaQueries.scss */
 
-@media only screen and (min-width: 768px) {
-    /* tablets and desktop */
-}
-
 @media only screen and (max-width: 767px) {
     /* phones */
 }
 
-@media only screen and (max-width: 767px) and (orientation: portrait) {
+@media only screen and (max-width: 767px) and (orientation: landscape) {
     /* portrait phones */
+
+    .side-nav {
+		& .nav i {
+			font-size: $mobileLandscapeLeftNavIconSize;
+    	}
+
+    	& .nav a {
+    		line-height: $mobileLandscapeLeftNavLineHeight !important;
+    	}
+
+		& a::before {
+			top: $mobileLandscapeArrowTopSize;
+			@include triangle($mobileLandscapeArrowSize, $white);
+			border-right: 0px solid $white;
+		}
+
+		& a.selected-link::before {
+			display: block;
+			border-right: $mobileArrowSize solid $white;
+		}
+    }
+
+}
+
+/* tablets */
+@media only screen and (min-width: 768px) {
+	section[role='main'] {
+		padding-top: $desktopHeaderHeight;
+		padding-left: $desktopLeftNavWidth;
+	}
+
+	.navbar {
+		height: $desktopHeaderHeight;
+		font-size: $desktopHeaderFontSize;
+		line-height: $desktopHeaderLineHeight;
+
+		& .navbar-content {
+			height: $desktopHeaderHeight;
+		}
+	}
+
+	.navbar .search {
+		& .search-box {
+			height: $desktopHeaderHeight;
+			@include transition(height 0.8s ease 0.5s, width 1s ease, border-color 0.8s ease);
+		}
+	}
+    
+    .side-nav {
+		top: $desktopHeaderHeight;
+		min-width: $desktopLeftNavMinWidth;
+		width: $desktopLeftNavWidth;
+
+		background-color: $backgroundColor;
+		border-right: 1px solid $gray;
+
+		@include box-shadow(0);
+
+		& .nav li {
+			text-shadow: none;
+			border-top: 1px solid $gray;
+		}
+
+		& .nav {
+			border-bottom: 1px solid $gray;
+		}
+
+		& .nav i {
+			display: none;
+		}
+
+		& .nav a,
+		& .nav a:link,
+		& .nav a:visited {
+			font-size: $desktopLeftNavFontSize;
+			background-color: $backgroundColor;
+			color: $cyan;
+
+			&.selected-link {
+				color: $white;
+			}
+		}
+
+		& .nav a:hover::before {
+			width: 8px;
+		}
+
+		& a::before {
+			top: 0;
+			left: 0;
+
+			width: 0%;
+			height: 100%;
+			
+			background-color: $cyan;
+			border-right: 0;
+		}
+
+		& .nav a.selected-link::before {
+			border-right: 0;
+			width: 100%;
+		}
+
+		& .thumb {
+			width: 125px;
+			height: 125px;
+			@include border-radius(60px);
+			background-size: 125px;
+			background: url("../images/danandi-tablet.jpg");
+			@include transparency(1);
+			@include transition(opacity 0.8s ease 0.6s);
+		}
+
+		.footer {
+			color: $grayDark;
+			font-size: 14px;
+			line-height: 20px;
+
+			& .name {
+				display: inline;
+			}
+		}
+    }
+
+	.side-nav-content {
+		padding-top: 10px;
+	}
+
+	ul.nav li {
+		& a,
+		& a:link,
+		& a:visited {
+			line-height: $desktopHeaderLineHeight;
+			padding: $desktopSocialLinkPadding;
+		}
+	}
+
+	.panel {
+		min-width: 610px;
+	}
+
+	.loading-bar {
+		height: 2px;
+	}
+
+	.search-results-overlay {
+		& .search-overlay-header {
+			h2 {
+				font-size: $desktopPanelHeaderFontSize;
+				line-height: $desktopPanelHeaderLineHeight;
+			}
+		}
+	}
+}
+
+/* desktop */
+@media only screen and (min-width: 1225px) {
+	body {
+		font-size: $desktopFontSize;
+		line-height: $desktopLineHeight;
+	}
+
+	.side-nav {
+		max-width: $desktopLeftNavMaxWidth;
+
+		& .thumb {
+			width: 200px;
+			height: 200px;
+			@include border-radius(100px);
+			background-size: 200px;
+			background: url("../images/danandi-desktop.jpg");
+		}
+	}
+
+	ul.nav.vertical {
+		margin-top: 20px;
+	}
+
+	.panel {
+		padding-top: $desktopPanelTopPadding;
+
+		& .panel-header {
+			font-size: $desktopPanelHeaderFontSize;
+			line-height: $desktopPanelHeaderLineHeight;
+		}
+	}
+}
+
+/* large desktops */
+@media only screen and (min-width: 1500px) {
+	section[role='main'] {
+		padding-left: $desktopLeftNavMaxWidth;
+	}
+
+	.panel {
+		max-width: 1250px;
+		margin: 0 auto;
+		float: none;
+	}
 }
