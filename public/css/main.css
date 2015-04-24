@@ -75,6 +75,31 @@ section[role='main'] {
   transition: visibility 0s linear 0.8s, opacity 0.8s ease;
 }
 
+@media only screen and (min-width: 768px) {
+  section[role='main'] {
+    padding-top: 48px;
+    padding-left: 20%;
+  }
+
+  .search-results-overlay .search-overlay-header h2 {
+    font-size: 50px;
+    line-height: 54px;
+  }
+}
+@media only screen and (min-width: 1225px) {
+  body,
+  button,
+  input[type="button"],
+  input[type="submit"] {
+    font-size: 22px;
+    line-height: 34px;
+  }
+}
+@media only screen and (min-width: 1500px) {
+  section[role='main'] {
+    padding-left: 300px;
+  }
+}
 /* _animations.scss */
 @-webkit-keyframes fadein-left {
   from {
@@ -1682,35 +1707,6 @@ fieldset {
   padding: 0;
 }
 
-/* _mediaQueries.scss */
-/* tablets */
-@media only screen and (min-width: 768px) {
-  section[role='main'] {
-    padding-top: 48px;
-    padding-left: 20%;
-  }
-
-  .search-results-overlay .search-overlay-header h2 {
-    font-size: 50px;
-    line-height: 54px;
-  }
-}
-/* desktop */
-@media only screen and (min-width: 1225px) {
-  body,
-  button,
-  input[type="button"],
-  input[type="submit"] {
-    font-size: 22px;
-    line-height: 34px;
-  }
-}
-/* large desktops */
-@media only screen and (min-width: 1500px) {
-  section[role='main'] {
-    padding-left: 300px;
-  }
-}
 /* FONT PATH
  * -------------------------- */
 @font-face {

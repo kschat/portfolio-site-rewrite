@@ -54,3 +54,35 @@ section[role='main'] {
 .fade {
 	@include transition(visibility 0s linear 0.8s, opacity 0.8s ease);
 }
+
+@media #{$mq-medium} {
+  section[role='main'] {
+    padding-top: $desktopHeaderHeight;
+    padding-left: $desktopLeftNavWidth;
+  }
+
+  .search-results-overlay {
+    & .search-overlay-header {
+      h2 {
+        font-size: $desktopPanelHeaderFontSize;
+        line-height: $desktopPanelHeaderLineHeight;
+      }
+    }
+  }
+}
+
+@media #{$mq-large} {
+  body,
+  button,
+  input[type="button"],
+  input[type="submit"] {
+    font-size: $desktopFontSize;
+    line-height: $desktopLineHeight;
+  }
+}
+
+@media #{$mq-extra-large} {
+  section[role='main'] {
+    padding-left: $desktopLeftNavMaxWidth;
+  }
+}
