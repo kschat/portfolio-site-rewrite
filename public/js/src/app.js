@@ -13,7 +13,7 @@
     	SearchItemList = require('SearchItemList');
 
     var App = {};
-    
+
     App.vent = _.extend({}, Backbone.Events);
 
     App.views = {};
@@ -29,7 +29,7 @@
 	    App.views.projectsLink = new NavLinkView({ vent: App.vent, el: 'a#projects' });
 	    App.views.resumeLink = new NavLinkView({ vent: App.vent, el: 'a#resume' });
 	    App.views.blogLink = new NavLinkView({ vent: App.vent, el: 'a#blog' });
-	    
+
 	    App.views.panel = new PanelView({ vent: App.vent, model: new PanelModel(), el: 'div.panel' });
 	    App.views.loadingBar = new LoadingBarView({ vent: App.vent, el: 'div.loading-bar' });
 	    App.views.searchForm = new SearchFormView({ vent: App.vent, el: 'form.search', searchItems: App.collections.searchItems });

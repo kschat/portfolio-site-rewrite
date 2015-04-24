@@ -1,7 +1,7 @@
 //NavLinkView.js
 
-var _ = require('underscore'),
-	Backbone = require('backbone');
+var _ = require('underscore')
+	, Backbone = require('backbone');
 
 exports = module.exports = Backbone.View.extend({
 	tagName: 'a',
@@ -34,15 +34,15 @@ exports = module.exports = Backbone.View.extend({
 	},
 
 	onNavClick: function(args) {
-		if(args.sender !== this.id) {
-			this.$el.removeClass('selected-link');
-		}
+		if(args.sender === this.id) { return; }
+
+		this.$el.removeClass('selected-link');
 	},
 
 	onNavSelect: function(args) {
-		if(args.sender === this.id) {
-			this.$el.addClass('selected-link');
-			this.vent.trigger('nav:click', { sender: this.id });
-		}
+		if(args.sender !== this.id) { return; }
+
+		this.$el.addClass('selected-link');
+		this.vent.trigger('nav:click', { sender: this.id });
 	}
 });

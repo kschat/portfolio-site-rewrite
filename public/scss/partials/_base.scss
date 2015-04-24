@@ -41,8 +41,8 @@ section[role='main'] {
 
 	background-color: $white;
 	// background-size: 15px 15px;
-	// @include linear-gradient(-45deg, 
-	// 	rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, 
+	// @include linear-gradient(-45deg,
+	// 	rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%,
 	// 	rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
 
 	& .panel-header {
@@ -94,11 +94,23 @@ section[role='main'] {
 	top: 0;
 	left: 0;
 	z-index: $headerZIndex + 1;
-	
+
 	width: 0%;
 	height: 2px;
 
 	background-color: $cyan;
 
 	@include transition(width 0.8s ease);
+}
+
+.list {
+	list-style-type: none;
+
+	.item {
+		.title {
+			padding-bottom: 6px;
+		}
+
+		margin-bottom: 10px;
+	}
 }

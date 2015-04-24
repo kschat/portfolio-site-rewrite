@@ -1,14 +1,21 @@
-var fs = require('fs');
+'use strict';
+
+var hbs = require('express-handlebars').create();
 
 exports.init = function init(app) {
-	app.get(/^\/(about|projects|resume|blog)?$/, function(req, res) {
-		var content = fs.readFileSync('views/' + (req.params[0] || 'about') + '.ejs', 'utf-8');
+  app.get('/:page', function(req, res, next) {
+    var view = req.params.page || 'about';
 
-		if(req.xhr) {
-			res.send({ content: content });
-		}
-		else {
-			res.render('index', { content: content, env: app.get('env').toUpperCase() });
-		}
+    if(!req.xhr) { return res.render(view); }
+
+    hbs.getTemplate('./views/' + view + '.hbs')
+
+      .then(function(partial) {
+        return res.send({ content: partial() });
+      })
+
+      .catch(function(err) {
+        return res.send({ error: 'Error loading page' });
+      });
 	});
 };

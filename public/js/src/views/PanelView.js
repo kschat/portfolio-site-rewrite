@@ -22,15 +22,15 @@ exports = module.exports = Backbone.View.extend({
 	},
 
 	setupXhr: function() {
-		var xhr = new window.XMLHttpRequest();
+		var xhr = new XMLHttpRequest();
 
 		xhr.addEventListener('progress', (function(evt) {
-			if(evt.lengthComputable) {
-				this.vent.trigger('loadingbar:progress', {
-					loaded: evt.loaded,
-					total: evt.total
-				});
-			}
+			if(!evt.lengthComputable) { return; }
+
+			this.vent.trigger('loadingbar:progress', {
+				loaded: evt.loaded,
+				total: evt.total
+			});
 		}).bind(this), false);
 
 		return xhr;
@@ -38,7 +38,7 @@ exports = module.exports = Backbone.View.extend({
 
 	onPanelLoadStart: function(args) {
 		this.vent.trigger('loadingbar:start');
-		
+
 		this.model.set('page', args.sender);
 		this.model.fetch({
 			xhr: this.setupXhr,
