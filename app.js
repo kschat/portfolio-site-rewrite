@@ -2,16 +2,18 @@
 
 var express = require('express')
 	, settings = require('./config/settings.json')
-	, routes = require('./routes')
 	, http = require('http')
 	, path = require('path')
 	, fs = require('fs')
 	, exphbs = require('express-handlebars')
+	, Promise = require('bluebird')
 	, assets = require('./middleware/assets')
 
 	, app = express()
 	, routeDir = 'routes'
 	, routeFiles = fs.readdirSync(routeDir);
+
+Promise.promisifyAll(fs);
 
 // all environments
 app.set('port', process.env.PORT || 3000);

@@ -43,7 +43,11 @@ section[role='main'] {
 
 	.item {
 		padding: 10px 0;
-		margin-bottom: 30px;
+		margin-bottom: 10px;
+
+    p {
+      margin-bottom: 12px;
+    }
 
 		.title {
 			padding-bottom: 6px;
@@ -78,6 +82,10 @@ section[role='main'] {
   input[type="submit"] {
     font-size: $desktopFontSize;
     line-height: $desktopLineHeight;
+  }
+
+  .item {
+    margin-bottom: 30px;
   }
 }
 

@@ -2,5 +2,7 @@
   "assets": {
     "js": "js/build/main.js",
     "css": "css/main.css"
-  }
+  },
+
+  "markdownPath": "./public/markdown"
 }

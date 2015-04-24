@@ -15,9 +15,11 @@
   },
   "license": "MIT",
   "dependencies": {
+    "bluebird": "^2.9.24",
     "express": "3.x",
     "express-handlebars": "^2.0.1",
-    "lodash": "^3.7.0"
+    "lodash": "^3.7.0",
+    "marked": "^0.3.3"
   },
   "scripts": {
     "start": "node app.js"

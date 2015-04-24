@@ -3,49 +3,21 @@
 
 	<div class="panel-body">
 		<ul class="list">
-      <li class="item">
-        <h4>ChampionJS</h4>
-        <p>
-          ChampionJS is an MVP JavaScript framework that uses "dumb" views and
-          event binding to keep your code structured, and easily testable. This
-          framework started as a foundation for a single page app I was working
-          on at UPMC, but continued to grow after the project. It was a great
-          learning experience and gave me great insight into what goes into
-          writing a frontend framework.
-        </p>
+      {{#each projects}}
+        <li class="item">
+          {{{this.about}}}
 
-        <a href="#" class="btn btn-primary">
-          <i class="fa fa-info-circle fa-fw"></i>
-          Read more
-        </a>
+          <a href="{{this.href}}" class="btn btn-primary">
+            <i class="fa fa-info-circle fa-fw"></i>
+            Read more
+          </a>
 
-        <a href="#" class="btn">
-          <i class="fa fa-github fa-fw"></i>
-          View on GitHub
-        </a>
-      </li>
-
-      <li class="item">
-        <h4>TF2Outpost Price Integration</h4>
-
-        <p>
-          This is a Chrome extension that I wrote to inject item prices into the
-          TF2 item trading site, <a href="http://tf2outpost.com">TF2Outpost</a>.
-          The extension works by fetching prices from
-          <a href="http://backpack.tf">backpack.tf's</a> item API and mapping
-          those prices to the correct item in a content script.
-        </p>
-
-        <a href="#" class="btn btn-primary">
-          <i class="fa fa-info-circle fa-fw"></i>
-          Read more
-        </a>
-
-        <a href="#" class="btn">
-          <i class="fa fa-github fa-fw"></i>
-          View on GitHub
-        </a>
-      </li>
+          <a href="{{this.gitHubUrl}}" class="btn">
+            <i class="fa fa-github fa-fw"></i>
+            View on GitHub
+          </a>
+        </li>
+      {{/each}}
     </ul>
 	</div>
 </div>

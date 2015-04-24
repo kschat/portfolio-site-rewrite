@@ -110,7 +110,7 @@ module.exports = function(grunt) {
 				options: {
 					file: 'app.js',
 					watchExtensions: ['js', 'json'],
-					ignoredFiles: ['node_modules/**', 'public/**']
+					ignoredFiles: ['node_modules/**', 'public/**', '.git']
 				}
 			}
 		},
