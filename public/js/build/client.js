@@ -1,59 +1,57 @@
 require=(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 ;(function(global, undefined) {
-    'use strict';
+  'use strict';
 
-    var _ = require('underscore'),
-    	$ = require('jQuery'),
-    	Backbone = require('backbone'),
-    	AppRouter = require('AppRouter'),
-    	NavLinkView = require('NavLinkView'),
-    	PanelView = require('PanelView'),
-    	PanelModel = require('PanelModel'),
-    	LoadingBarView = require('LoadingBarView'),
-    	SearchFormView = require('SearchFormView'),
-    	SearchItemList = require('SearchItemList'),
-    	SearchResultDropdown = require('SearchResultDropdown');
+  var _ = require('underscore')
+    , $ = require('jQuery')
+    , Backbone = require('backbone')
+    , AppRouter = require('AppRouter')
+    , NavLinkView = require('NavLinkView')
+    , PanelView = require('PanelView')
+    , PanelModel = require('PanelModel')
+    , LoadingBarView = require('LoadingBarView')
+    , SearchFormView = require('SearchFormView')
+    , SearchItemList = require('SearchItemList')
+    , SearchResultDropdown = require('SearchResultDropdown')
 
-    var App = {};
+    , App = {};
 
-    App.vent = _.extend({}, Backbone.Events);
+  App.vent = _.extend({}, Backbone.Events);
 
-    App.views = {};
-    App.collections = {};
+  App.views = {};
+  App.collections = {};
 
-    App.collections.searchItems = new SearchItemList();
+  App.collections.searchItems = new SearchItemList();
 
-    App.router = new AppRouter({ vent: App.vent });
-    Backbone.history.start({ pushState: true, slient: true });
+  App.router = new AppRouter({ vent: App.vent });
+  Backbone.history.start({ pushState: true, slient: true });
 
-    $(function() {
-    	App.views.aboutLink = new NavLinkView({ vent: App.vent, el: 'a#about' });
-	    App.views.projectsLink = new NavLinkView({ vent: App.vent, el: 'a#projects' });
-	    App.views.resumeLink = new NavLinkView({ vent: App.vent, el: 'a#resume' });
-	    App.views.blogLink = new NavLinkView({ vent: App.vent, el: 'a#blog' });
+  $(function() {
+    App.views.aboutLink = new NavLinkView({ vent: App.vent, el: 'a#about' });
+    App.views.projectsLink = new NavLinkView({ vent: App.vent, el: 'a#projects' });
+    App.views.resumeLink = new NavLinkView({ vent: App.vent, el: 'a#resume' });
+    App.views.blogLink = new NavLinkView({ vent: App.vent, el: 'a#blog' });
 
-	    App.views.panel = new PanelView({ vent: App.vent, model: new PanelModel(), el: 'div.panel' });
-	    App.views.loadingBar = new LoadingBarView({ vent: App.vent, el: 'div.loading-bar' });
+    App.views.panel = new PanelView({ vent: App.vent, model: new PanelModel(), el: 'div.background-panel' });
+    App.views.loadingBar = new LoadingBarView({ vent: App.vent, el: 'div.loading-bar' });
 
-	    App.views.searchForm = new SearchFormView({ vent: App.vent, el: 'form.search', searchItems: App.collections.searchItems });
-	    App.views.searchDropdown = new SearchResultDropdown({ vent: App.vent, el: '.search-results-overlay' });
+    App.views.searchForm = new SearchFormView({ vent: App.vent, el: 'form.search', searchItems: App.collections.searchItems });
+    App.views.searchDropdown = new SearchResultDropdown({ vent: App.vent, el: '.search-results-overlay' });
 
-	    App.vent.trigger('nav:select', { sender: Backbone.history.fragment || 'about' });
-    });
+    App.vent.trigger('nav:select', { sender: Backbone.history.fragment || 'about' });
+  });
 
-    $(document).on('click', 'a[data-bypass]', function(e) {
-    	var href = $(this).attr('href'),
-    		protocol = this.protocol + '//';
+  $(document).on('click', 'a[data-bypass]', function(e) {
+    var href = $(this).attr('href'),
+      protocol = this.protocol + '//';
 
-    	if(href.slice(protocol.length) !== protocol) {
-    		e.preventDefault();
-    		App.router.navigate(href, true);
-    	}
-    });
+    if(href.slice(protocol.length) !== protocol) {
+      e.preventDefault();
+      App.router.navigate(href, true);
+    }
+  });
 })(window);
-},{"AppRouter":"+zugQY","LoadingBarView":"NGztWO","NavLinkView":"qC78cL","PanelModel":"K86Wbo","PanelView":"BqyFzI","SearchFormView":"jXn2oY","SearchItemList":"GoqVhi","SearchResultDropdown":"WTOLjN","backbone":"rEXonx","jQuery":"NzEAb9","underscore":"7SXExP"}],"SearchItemList":[function(require,module,exports){
-module.exports=require('GoqVhi');
-},{}],"GoqVhi":[function(require,module,exports){
+},{"AppRouter":"XLGtWJ","LoadingBarView":"Nd2aeQ","NavLinkView":"ozjQRV","PanelModel":"8nFx4J","PanelView":"9l5+it","SearchFormView":"A5wao/","SearchItemList":"L0FyZ/","SearchResultDropdown":"gBbCDi","backbone":"GGOLHP","jQuery":"XNIdGt","underscore":"QCxxRp"}],"L0FyZ/":[function(require,module,exports){
 //SearchItemList.js
 
 var _ = require('underscore'),
@@ -67,7 +65,9 @@ exports = module.exports = Backbone.Collection.extend({
 		return '/api/search?q=' + this.query;
 	}
 });
-},{"SearchItem":"CFNPPs","backbone":"rEXonx","underscore":"7SXExP"}],"rEXonx":[function(require,module,exports){
+},{"SearchItem":"yk7vYt","backbone":"GGOLHP","underscore":"QCxxRp"}],"SearchItemList":[function(require,module,exports){
+module.exports=require('L0FyZ/');
+},{}],"GGOLHP":[function(require,module,exports){
 var global=typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {};(function browserifyShim(module, exports, define, browserify_shim__define__module__export__) {
 
 ; global.jquery = require("jquery");
@@ -1656,9 +1656,9 @@ var global=typeof self !== "undefined" ? self : typeof window !== "undefined" ? 
 
 }).call(global, undefined, undefined, undefined, function defineExport(ex) { module.exports = ex; });
 
-},{"jquery":"NzEAb9","underscore":"7SXExP"}],"backbone":[function(require,module,exports){
-module.exports=require('rEXonx');
-},{}],"NzEAb9":[function(require,module,exports){
+},{"jquery":"XNIdGt","underscore":"QCxxRp"}],"backbone":[function(require,module,exports){
+module.exports=require('GGOLHP');
+},{}],"XNIdGt":[function(require,module,exports){
 var global=typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {};(function browserifyShim(module, exports, define, browserify_shim__define__module__export__) {
 /*! jQuery v2.0.3 | (c) 2005, 2013 jQuery Foundation, Inc. | jquery.org/license
 */
@@ -1670,10 +1670,10 @@ var global=typeof self !== "undefined" ? self : typeof window !== "undefined" ? 
 }).call(global, undefined, undefined, undefined, function defineExport(ex) { module.exports = ex; });
 
 },{}],"jquery":[function(require,module,exports){
-module.exports=require('NzEAb9');
+module.exports=require('XNIdGt');
 },{}],"underscore":[function(require,module,exports){
-module.exports=require('7SXExP');
-},{}],"7SXExP":[function(require,module,exports){
+module.exports=require('QCxxRp');
+},{}],"QCxxRp":[function(require,module,exports){
 //     Underscore.js 1.5.2
 //     http://underscorejs.org
 //     (c) 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
@@ -2950,7 +2950,7 @@ module.exports=require('7SXExP');
   });
 
 }).call(this);
-},{}],"K86Wbo":[function(require,module,exports){
+},{}],"8nFx4J":[function(require,module,exports){
 //PanelModel.js
 
 var _ = require('underscore'),
@@ -2966,11 +2966,11 @@ exports = module.exports = Backbone.Model.extend({
 		page: 'about'
 	}
 });
-},{"backbone":"rEXonx","underscore":"7SXExP"}],"PanelModel":[function(require,module,exports){
-module.exports=require('K86Wbo');
+},{"backbone":"GGOLHP","underscore":"QCxxRp"}],"PanelModel":[function(require,module,exports){
+module.exports=require('8nFx4J');
 },{}],"SearchItem":[function(require,module,exports){
-module.exports=require('CFNPPs');
-},{}],"CFNPPs":[function(require,module,exports){
+module.exports=require('yk7vYt');
+},{}],"yk7vYt":[function(require,module,exports){
 //SearchItem.js
 
 var _ = require('underscore'),
@@ -2988,9 +2988,7 @@ exports = module.exports = Backbone.Model.extend({
 		description: ''
 	}
 });
-},{"backbone":"rEXonx","underscore":"7SXExP"}],"AppRouter":[function(require,module,exports){
-module.exports=require('+zugQY');
-},{}],"+zugQY":[function(require,module,exports){
+},{"backbone":"GGOLHP","underscore":"QCxxRp"}],"XLGtWJ":[function(require,module,exports){
 var Backbone = require('backbone');
 
 exports = module.exports = Backbone.Router.extend({
@@ -3023,7 +3021,9 @@ exports = module.exports = Backbone.Router.extend({
 		this.vent.trigger('route:blog');
 	}
 });
-},{"backbone":"rEXonx"}],"NGztWO":[function(require,module,exports){
+},{"backbone":"GGOLHP"}],"AppRouter":[function(require,module,exports){
+module.exports=require('XLGtWJ');
+},{}],"Nd2aeQ":[function(require,module,exports){
 //LoadingBarView.js
 
 var _ = require('underscore'),
@@ -3065,9 +3065,9 @@ exports = module.exports = Backbone.View.extend({
 		}).bind(this));
 	}
 });
-},{"backbone":"rEXonx","underscore":"7SXExP"}],"LoadingBarView":[function(require,module,exports){
-module.exports=require('NGztWO');
-},{}],"qC78cL":[function(require,module,exports){
+},{"backbone":"GGOLHP","underscore":"QCxxRp"}],"LoadingBarView":[function(require,module,exports){
+module.exports=require('Nd2aeQ');
+},{}],"ozjQRV":[function(require,module,exports){
 //NavLinkView.js
 
 var _ = require('underscore')
@@ -3116,17 +3116,19 @@ exports = module.exports = Backbone.View.extend({
 		this.vent.trigger('nav:click', { sender: this.id });
 	}
 });
-},{"backbone":"rEXonx","underscore":"7SXExP"}],"NavLinkView":[function(require,module,exports){
-module.exports=require('qC78cL');
-},{}],"BqyFzI":[function(require,module,exports){
+},{"backbone":"GGOLHP","underscore":"QCxxRp"}],"NavLinkView":[function(require,module,exports){
+module.exports=require('ozjQRV');
+},{}],"9l5+it":[function(require,module,exports){
 //PanelView.js
 
-var _ = require('underscore'),
-	Backbone = require('backbone');
+'use strict';
+
+var _ = require('underscore')
+	, Backbone = require('backbone');
 
 exports = module.exports = Backbone.View.extend({
 	tagName: 'div',
-	className: 'panel',
+	className: 'background-panel',
 
 	//Custom attributes
 	vent: {},
@@ -3169,6 +3171,7 @@ exports = module.exports = Backbone.View.extend({
 	},
 
 	onPanelLoadComplete: function(model, response) {
+		console.log(this.$el)
 		this.$el.fadeOut(function() {
 			this.$el.html(response.content);
 			this.$el.fadeIn();
@@ -3184,9 +3187,9 @@ exports = module.exports = Backbone.View.extend({
 		this.vent.trigger('loadingbar:complete');
 	}
 });
-},{"backbone":"rEXonx","underscore":"7SXExP"}],"PanelView":[function(require,module,exports){
-module.exports=require('BqyFzI');
-},{}],"jXn2oY":[function(require,module,exports){
+},{"backbone":"GGOLHP","underscore":"QCxxRp"}],"PanelView":[function(require,module,exports){
+module.exports=require('9l5+it');
+},{}],"A5wao/":[function(require,module,exports){
 //SearchFormView.js
 
 var _ = require('underscore'),
@@ -3260,9 +3263,11 @@ exports = module.exports = Backbone.View.extend({
 		this.vent.trigger('search:error', { model: model, response: response });
 	}
 });
-},{"SearchItemList":"GoqVhi","backbone":"rEXonx","underscore":"7SXExP"}],"SearchFormView":[function(require,module,exports){
-module.exports=require('jXn2oY');
-},{}],"WTOLjN":[function(require,module,exports){
+},{"SearchItemList":"L0FyZ/","backbone":"GGOLHP","underscore":"QCxxRp"}],"SearchFormView":[function(require,module,exports){
+module.exports=require('A5wao/');
+},{}],"SearchResultDropdown":[function(require,module,exports){
+module.exports=require('gBbCDi');
+},{}],"gBbCDi":[function(require,module,exports){
 //SearchResultDropdown.js
 
 var _ = require('underscore'),
@@ -3343,7 +3348,5 @@ exports = module.exports = Backbone.View.extend({
 			 { title: title, content: content });
 	}
 });
-},{"backbone":"rEXonx","underscore":"7SXExP"}],"SearchResultDropdown":[function(require,module,exports){
-module.exports=require('WTOLjN');
-},{}]},{},[1,"GoqVhi","K86Wbo","CFNPPs","+zugQY","qC78cL","NGztWO","jXn2oY","BqyFzI","WTOLjN"])
+},{"backbone":"GGOLHP","underscore":"QCxxRp"}]},{},[1,"L0FyZ/","8nFx4J","yk7vYt","XLGtWJ","Nd2aeQ","ozjQRV","9l5+it","A5wao/","gBbCDi"])
 ;
