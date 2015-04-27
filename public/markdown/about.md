@@ -28,4 +28,4 @@ worked with MySQL, MSSQL, and MongoDB.
 I've done a few freelance projects in the past and have experience deploying and
 managing clients sites. I automate things as often as I can, and have no problem
 writing up a quick shell script to get a job done fast. I'm familiar with Windows,
-altough I prefer to work in Linux (currently running Arch and loving it) or OS X.
+although I prefer to work in Linux (currently running Arch and loving it) or OS X.

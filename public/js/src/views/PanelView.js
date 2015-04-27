@@ -1,11 +1,13 @@
 //PanelView.js
 
-var _ = require('underscore'),
-	Backbone = require('backbone');
+'use strict';
+
+var _ = require('underscore')
+	, Backbone = require('backbone');
 
 exports = module.exports = Backbone.View.extend({
 	tagName: 'div',
-	className: 'panel',
+	className: 'background-panel',
 
 	//Custom attributes
 	vent: {},
@@ -48,6 +50,7 @@ exports = module.exports = Backbone.View.extend({
 	},
 
 	onPanelLoadComplete: function(model, response) {
+		console.log(this.$el)
 		this.$el.fadeOut(function() {
 			this.$el.html(response.content);
 			this.$el.fadeIn();

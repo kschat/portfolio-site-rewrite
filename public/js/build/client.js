@@ -1,55 +1,55 @@
 require=(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 ;(function(global, undefined) {
-    'use strict';
+  'use strict';
 
-    var _ = require('underscore'),
-    	$ = require('jQuery'),
-    	Backbone = require('backbone'),
-    	AppRouter = require('AppRouter'),
-    	NavLinkView = require('NavLinkView'),
-    	PanelView = require('PanelView'),
-    	PanelModel = require('PanelModel'),
-    	LoadingBarView = require('LoadingBarView'),
-    	SearchFormView = require('SearchFormView'),
-    	SearchItemList = require('SearchItemList'),
-    	SearchResultDropdown = require('SearchResultDropdown');
+  var _ = require('underscore')
+    , $ = require('jQuery')
+    , Backbone = require('backbone')
+    , AppRouter = require('AppRouter')
+    , NavLinkView = require('NavLinkView')
+    , PanelView = require('PanelView')
+    , PanelModel = require('PanelModel')
+    , LoadingBarView = require('LoadingBarView')
+    , SearchFormView = require('SearchFormView')
+    , SearchItemList = require('SearchItemList')
+    , SearchResultDropdown = require('SearchResultDropdown')
 
-    var App = {};
+    , App = {};
 
-    App.vent = _.extend({}, Backbone.Events);
+  App.vent = _.extend({}, Backbone.Events);
 
-    App.views = {};
-    App.collections = {};
+  App.views = {};
+  App.collections = {};
 
-    App.collections.searchItems = new SearchItemList();
+  App.collections.searchItems = new SearchItemList();
 
-    App.router = new AppRouter({ vent: App.vent });
-    Backbone.history.start({ pushState: true, slient: true });
+  App.router = new AppRouter({ vent: App.vent });
+  Backbone.history.start({ pushState: true, slient: true });
 
-    $(function() {
-    	App.views.aboutLink = new NavLinkView({ vent: App.vent, el: 'a#about' });
-	    App.views.projectsLink = new NavLinkView({ vent: App.vent, el: 'a#projects' });
-	    App.views.resumeLink = new NavLinkView({ vent: App.vent, el: 'a#resume' });
-	    App.views.blogLink = new NavLinkView({ vent: App.vent, el: 'a#blog' });
+  $(function() {
+    App.views.aboutLink = new NavLinkView({ vent: App.vent, el: 'a#about' });
+    App.views.projectsLink = new NavLinkView({ vent: App.vent, el: 'a#projects' });
+    App.views.resumeLink = new NavLinkView({ vent: App.vent, el: 'a#resume' });
+    App.views.blogLink = new NavLinkView({ vent: App.vent, el: 'a#blog' });
 
-	    App.views.panel = new PanelView({ vent: App.vent, model: new PanelModel(), el: 'div.panel' });
-	    App.views.loadingBar = new LoadingBarView({ vent: App.vent, el: 'div.loading-bar' });
+    App.views.panel = new PanelView({ vent: App.vent, model: new PanelModel(), el: 'div.background-panel' });
+    App.views.loadingBar = new LoadingBarView({ vent: App.vent, el: 'div.loading-bar' });
 
-	    App.views.searchForm = new SearchFormView({ vent: App.vent, el: 'form.search', searchItems: App.collections.searchItems });
-	    App.views.searchDropdown = new SearchResultDropdown({ vent: App.vent, el: '.search-results-overlay' });
+    App.views.searchForm = new SearchFormView({ vent: App.vent, el: 'form.search', searchItems: App.collections.searchItems });
+    App.views.searchDropdown = new SearchResultDropdown({ vent: App.vent, el: '.search-results-overlay' });
 
-	    App.vent.trigger('nav:select', { sender: Backbone.history.fragment || 'about' });
-    });
+    App.vent.trigger('nav:select', { sender: Backbone.history.fragment || 'about' });
+  });
 
-    $(document).on('click', 'a[data-bypass]', function(e) {
-    	var href = $(this).attr('href'),
-    		protocol = this.protocol + '//';
+  $(document).on('click', 'a[data-bypass]', function(e) {
+    var href = $(this).attr('href'),
+      protocol = this.protocol + '//';
 
-    	if(href.slice(protocol.length) !== protocol) {
-    		e.preventDefault();
-    		App.router.navigate(href, true);
-    	}
-    });
+    if(href.slice(protocol.length) !== protocol) {
+      e.preventDefault();
+      App.router.navigate(href, true);
+    }
+  });
 })(window);
 },{"AppRouter":"+zugQY","LoadingBarView":"NGztWO","NavLinkView":"qC78cL","PanelModel":"K86Wbo","PanelView":"BqyFzI","SearchFormView":"jXn2oY","SearchItemList":"GoqVhi","SearchResultDropdown":"WTOLjN","backbone":"rEXonx","jQuery":"NzEAb9","underscore":"7SXExP"}],"SearchItemList":[function(require,module,exports){
 module.exports=require('GoqVhi');
@@ -3121,12 +3121,14 @@ module.exports=require('qC78cL');
 },{}],"BqyFzI":[function(require,module,exports){
 //PanelView.js
 
-var _ = require('underscore'),
-	Backbone = require('backbone');
+'use strict';
+
+var _ = require('underscore')
+	, Backbone = require('backbone');
 
 exports = module.exports = Backbone.View.extend({
 	tagName: 'div',
-	className: 'panel',
+	className: 'background-panel',
 
 	//Custom attributes
 	vent: {},
@@ -3169,6 +3171,7 @@ exports = module.exports = Backbone.View.extend({
 	},
 
 	onPanelLoadComplete: function(model, response) {
+		console.log(this.$el)
 		this.$el.fadeOut(function() {
 			this.$el.html(response.content);
 			this.$el.fadeIn();
@@ -3345,5 +3348,5 @@ exports = module.exports = Backbone.View.extend({
 });
 },{"backbone":"rEXonx","underscore":"7SXExP"}],"SearchResultDropdown":[function(require,module,exports){
 module.exports=require('WTOLjN');
-},{}]},{},[1,"GoqVhi","K86Wbo","CFNPPs","+zugQY","qC78cL","NGztWO","jXn2oY","BqyFzI","WTOLjN"])
+},{}]},{},[1,"GoqVhi","K86Wbo","CFNPPs","+zugQY","NGztWO","qC78cL","BqyFzI","jXn2oY","WTOLjN"])
 ;
