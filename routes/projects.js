@@ -1,32 +1,41 @@
 'use strict';
 
 var hbs = require('express-handlebars').create()
-  , marked = require('marked')
-  , fs = require('fs')
   , Promise = require('bluebird')
   , _ = require('lodash')
   , path = require('path')
   , projectJson = require('../config/projects.json')
   , settings = require('../config/settings.json')
+  , mdRenderer = require('../lib/markdownRenderer')
+  , ServerError = require('../lib/ServerError')
 
+  , mapAndCompact = _.compose(_.compact, _.map)
   , resolveProjectFile = _.partial(path.resolve, settings.markdownPath)
-  , readUtf8FileAsync = _.partialRight(fs.readFileAsync.bind(fs), 'utf-8')
-  , readProjectFile = _.compose(readUtf8FileAsync, resolveProjectFile)
-  , log = console.log.bind(console);
+  , renderProjectMarkdown = _.partialRight(mdRenderer, {
+      renderTemplate: false,
+      wrapInObject: false
+    })
+
+    // read each markdown file in the projects.json file and convert it to html
+  , projects = Promise.map(projectJson, function(project) {
+        return renderProjectMarkdown(resolveProjectFile(project.aboutPath))
+          .catch(_.noop);
+      })
+
+      .then(function(mds) {
+        return mapAndCompact(projectJson, function(project, index) {
+          if(!mds[index]) { return null; }
+
+          project.about = mds[index][0];
+          project.href = '/project/' + index;
+
+          return project;
+        });
+      });
 
 exports.init = function init(app) {
   app.get('/projects', function(req, res, next) {
-    Promise
-      .map(projectJson, function(project, index) {
-        return readProjectFile(project.aboutPath)
-          .then(marked)
-          .then(function(md) {
-            project.about = md;
-            project.href = '/project/' + index;
-            return project;
-          });
-      })
-
+    projects
       .then(function(projects) {
         var template = req.xhr
           ? hbs.getTemplate('./views/projects.hbs')
@@ -41,6 +50,6 @@ exports.init = function init(app) {
           : res.render('projects', projects);
       })
 
-      .catch(log);
+      .catch(_.compose(next, ServerError));
   });
 };

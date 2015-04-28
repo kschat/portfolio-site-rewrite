@@ -1,36 +1,23 @@
 'use strict';
 
 var hbs = require('express-handlebars').create()
-  , fs = require('fs')
   , path = require('path')
-  , Promise = require('bluebird')
   , settings = require('../config/settings.json')
-  , marked = require('marked')
-
-  , log = console.log.bind(console);
+  , mdRenderer = require('../lib/markdownRenderer')
+  , ServerError = require('../lib/ServerError')
+  , _ = require('lodash');
 
 exports.init = function init(app) {
   app.get('/(about)?', function(req, res, next) {
-    fs.readFileAsync(path.resolve(settings.markdownPath, 'about.md'), 'utf-8')
-
-      .then(marked)
-
-      .then(function(about) {
-        var template = req.xhr
-          ? hbs.getTemplate('./views/about.hbs')
-          : null;
-
-        return [{ about: about }, template];
-      })
+    mdRenderer(path.resolve(settings.markdownPath, 'about.md'))
 
       .spread(function(about, template) {
-
-        return template
+        return req.xhr
           ? res.send({ content: template(about) })
           : res.render('about', about);
       })
 
-      .catch(log);
+      .catch(_.compose(next, ServerError));
   });
 
   app.get('/:page?', function(req, res, next) {
@@ -46,8 +33,6 @@ exports.init = function init(app) {
         return res.send({ content: template() });
       })
 
-      .catch(function(err) {
-        return res.send({ error: 'Error loading page' });
-      });
+      .catch(_.compose(next, ServerError));
 	});
 };

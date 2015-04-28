@@ -3118,6 +3118,8 @@ exports = module.exports = Backbone.View.extend({
 });
 },{"backbone":"rEXonx","underscore":"7SXExP"}],"NavLinkView":[function(require,module,exports){
 module.exports=require('qC78cL');
+},{}],"PanelView":[function(require,module,exports){
+module.exports=require('BqyFzI');
 },{}],"BqyFzI":[function(require,module,exports){
 //PanelView.js
 
@@ -3171,7 +3173,6 @@ exports = module.exports = Backbone.View.extend({
 	},
 
 	onPanelLoadComplete: function(model, response) {
-		console.log(this.$el)
 		this.$el.fadeOut(function() {
 			this.$el.html(response.content);
 			this.$el.fadeIn();
@@ -3187,9 +3188,7 @@ exports = module.exports = Backbone.View.extend({
 		this.vent.trigger('loadingbar:complete');
 	}
 });
-},{"backbone":"rEXonx","underscore":"7SXExP"}],"PanelView":[function(require,module,exports){
-module.exports=require('BqyFzI');
-},{}],"jXn2oY":[function(require,module,exports){
+},{"backbone":"rEXonx","underscore":"7SXExP"}],"jXn2oY":[function(require,module,exports){
 //SearchFormView.js
 
 var _ = require('underscore'),
