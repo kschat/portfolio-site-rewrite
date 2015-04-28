@@ -50,7 +50,6 @@ exports = module.exports = Backbone.View.extend({
 	},
 
 	onPanelLoadComplete: function(model, response) {
-		console.log(this.$el)
 		this.$el.fadeOut(function() {
 			this.$el.html(response.content);
 			this.$el.fadeIn();

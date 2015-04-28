@@ -8,6 +8,7 @@ var express = require('express')
 	, exphbs = require('express-handlebars')
 	, Promise = require('bluebird')
 	, assets = require('./middleware/assets')
+	, errorHandler = require('./middleware/errorHandler')
 
 	, app = express()
 	, routeDir = 'routes'
@@ -35,10 +36,6 @@ app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 app.disable('x-powered-by');
 
-if ('development' === app.get('env')) {
-  app.use(express.errorHandler());
-}
-
 //Gets the path for each file in the routes directory and initiates them
 routeFiles.forEach(function(file) {
 	var filePath = path.resolve('./', routeDir, file)
@@ -46,6 +43,8 @@ routeFiles.forEach(function(file) {
 
 	route.init(app);
 });
+
+app.use(errorHandler(app.get('env')));
 
 http.createServer(app).listen(app.get('port'), function(){
 	console.log(app.get('env'));

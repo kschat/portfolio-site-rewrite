@@ -1,0 +1,20 @@
+<div class="panel">
+  <h3 class="panel-header">Uh oh...</h3>
+
+  <div class="panel-body">
+    {{error.message}}
+
+    {{#if error.stack}}
+      <div>status: {{error.status}}</div>
+
+      <div>stack:</div>
+      <pre>{{error.stack}}</pre>
+
+      <pre>{{error.props}}</pre>
+    {{/if}}
+  </div>
+</div>
+
+<div class="panel-overlay">
+  <i class="fa fa-cog fa-spin"></i>
+</div>
