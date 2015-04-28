@@ -85,8 +85,8 @@ section[role='main'] {
   }
 
   .search-results-overlay .search-overlay-header h2 {
-    font-size: 50px;
-    line-height: 54px;
+    font-size: 40px;
+    line-height: 44px;
   }
 }
 @media only screen and (min-width: 1225px) {
@@ -524,7 +524,9 @@ ul.nav {
   height: 100%;
   position: relative;
   float: left;
-  left: 2.4em;
+}
+.navbar .brand i {
+  padding-right: 6px;
 }
 .navbar a, .navbar a:link, .navbar a:visited {
   display: block;
@@ -1144,8 +1146,8 @@ ul.nav.vertical li a {
     padding-top: 30px;
   }
   .panel .panel-header {
-    font-size: 50px;
-    line-height: 54px;
+    font-size: 40px;
+    line-height: 44px;
   }
 }
 @media only screen and (min-width: 1500px) {
@@ -1174,6 +1176,53 @@ ul.nav.vertical li a {
 @media only screen and (min-width: 768px) {
   .loading-bar {
     height: 2px;
+  }
+}
+/* _resume.scss */
+.resume p:first-child > * {
+  font-weight: normal;
+}
+.resume a {
+  font-style: italic;
+  font-weight: normal;
+}
+.resume p strong:nth-child(3) {
+  font-style: italic;
+  font-weight: normal;
+}
+.resume em {
+  display: block;
+  padding-top: 12px;
+  font-size: 18px;
+  color: #c64a49;
+}
+.resume ul {
+  padding-left: 15px;
+  margin-top: 0;
+}
+.resume table td {
+  display: list-item;
+  margin-left: 15px;
+}
+
+@media only screen and (min-width: 768px) {
+  .resume {
+    margin-left: 5px;
+  }
+  .resume em {
+    font-size: 22px;
+  }
+  .resume ul {
+    padding-left: 30px;
+  }
+  .resume table {
+    width: 100%;
+  }
+  .resume table td {
+    display: table-cell;
+    margin-left: 0;
+    padding-right: 12px;
+    width: 33.3333%;
   }
 }
 /*! normalize.css v1.1.1 | MIT License | git.io/normalize */
@@ -1289,7 +1338,7 @@ body {
   font-family: 'Open Sans', Helvetica, Arial, sans-serif;
   font-size: 16px;
   color: #909090;
-  line-height: 26px;
+  line-height: 24px;
   margin: 0;
 }
 

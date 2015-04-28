@@ -43,7 +43,10 @@
 		height: 100%;
 		position: relative;
 		float: left;
-		left: 2.4em;
+
+    i {
+      padding-right: 6px;
+    }
 	}
 
 	& a,

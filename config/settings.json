@@ -4,5 +4,6 @@
     "css": "css/main.css"
   },
 
-  "markdownPath": "./public/markdown"
+  "markdownPath": "./public/markdown",
+  "resumeUrl": "https://raw.githubusercontent.com/kschat/resume/master/resume.md"
 }
